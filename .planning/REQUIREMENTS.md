@@ -39,4 +39,23 @@
 - **OS-03**: Blockchain Contracts — Standard e-signatures and Stripe Treasury provide superior legal/financial trust for v1.
 
 ## Traceability
-(To be populated by ROADMAP.md)
+
+| Requirement | Phase | Status |
+|-------------|-------|--------|
+| AUTH-01 | Phase 1 | Pending |
+| AUTH-02 | Phase 1 | Pending |
+| AUTH-03 | Phase 1 | Pending |
+| AUTH-04 | Phase 1 | Pending |
+| CONT-01 | Phase 2 | Pending |
+| CONT-02 | Phase 2 | Pending |
+| CONT-03 | Phase 3 | Pending |
+| CONT-04 | Phase 4 | Pending |
+| CONT-05 | Phase 2 | Pending |
+| CONT-06 | Phase 2 | Pending |
+| SYNC-01 | Phase 4 | Pending |
+| SYNC-02 | Phase 4 | Pending |
+| SYNC-03 | Phase 5 | Pending |
+| SYNC-04 | Phase 3 | Pending |
+| LIVE-01 | Phase 5 | Pending |
+| LIVE-02 | Phase 6 | Pending |
+| LIVE-03 | Phase 5 | Pending |

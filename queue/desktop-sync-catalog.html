@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SoundGrid Desktop Sync Catalog</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6C63FF",
+                        "background-light": "#f5f5f8",
+                        "background-dark": "#0F0F13",
+                        "surface": "#242434",
+                        "accent-teal": "#00D4AA",
+                    },
+                    fontFamily: {
+                        "display": ["Outfit", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Outfit', sans-serif;
+        }
+        .mono-text {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0F0F13;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #242434;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6C63FF;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex overflow-hidden">
+<!-- Left Sidebar -->
+<aside class="w-64 border-r border-slate-200 dark:border-primary/20 flex flex-col h-screen bg-background-light dark:bg-background-dark shrink-0">
+<div class="p-6 flex flex-col gap-1">
+<h1 class="text-xl font-bold tracking-tight text-primary">SoundGrid</h1>
+<p class="text-xs font-medium text-slate-500 dark:text-primary/60 uppercase tracking-widest">Professional Platform</p>
+</div>
+<nav class="flex-1 px-4 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/10 transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/10 transition-colors" href="#">
+<span class="material-symbols-outlined">library_music</span>
+<span class="text-sm font-medium">Library</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20 text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">sync</span>
+<span class="text-sm font-medium">Sync Catalog</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/10 transition-colors" href="#">
+<span class="material-symbols-outlined">folder_open</span>
+<span class="text-sm font-medium">Collections</span>
+</a>
+</nav>
+<div class="p-4 border-t border-slate-200 dark:border-primary/10">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/10 transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+<div class="mt-4 flex items-center gap-3 px-3 py-2">
+<div class="w-8 h-8 rounded-full bg-primary/30 flex items-center justify-center text-xs font-bold text-primary">JD</div>
+<div class="flex flex-col">
+<span class="text-sm font-medium leading-none">Jane Doe</span>
+<span class="text-xs text-slate-500">Pro Account</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col relative h-screen overflow-hidden">
+<!-- Header / Top Bar -->
+<header class="h-16 flex items-center justify-between px-8 border-b border-slate-200 dark:border-primary/20 bg-background-light dark:bg-background-dark z-10">
+<h2 class="text-xl font-bold">Sync Catalog</h2>
+<div class="flex items-center gap-6 flex-1 max-w-2xl px-8">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
+<input class="w-full bg-slate-100 dark:bg-surface border-none rounded-lg py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary/50 text-slate-900 dark:text-slate-100" placeholder="Search by title, artist, or metadata..." type="text"/>
+</div>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg text-sm font-semibold flex items-center gap-2 transition-all">
+<span class="material-symbols-outlined text-lg">upload</span>
+                Upload Track
+            </button>
+</header>
+<!-- Table Content -->
+<div class="flex-1 overflow-auto bg-background-light dark:bg-background-dark pb-24">
+<table class="w-full text-left border-collapse">
+<thead class="sticky top-0 bg-background-light dark:bg-background-dark/95 backdrop-blur-md z-10">
+<tr class="text-slate-500 dark:text-primary/60 text-xs uppercase tracking-wider font-semibold border-b border-slate-200 dark:border-primary/10">
+<th class="px-8 py-4 w-16">Art</th>
+<th class="px-4 py-4">Track Title</th>
+<th class="px-4 py-4">Artist</th>
+<th class="px-4 py-4">Duration</th>
+<th class="px-4 py-4">BPM</th>
+<th class="px-4 py-4">Genre</th>
+<th class="px-4 py-4 pr-8">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-primary/5">
+<!-- Row 1 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-primary/5 transition-colors group">
+<td class="px-8 py-3">
+<div class="w-10 h-10 rounded bg-surface border border-primary/20 flex items-center justify-center overflow-hidden">
+<div class="w-full h-full bg-gradient-to-br from-primary to-accent-teal opacity-80" data-alt="Abstract vibrant geometric album art"></div>
+</div>
+</td>
+<td class="px-4 py-3 font-semibold text-slate-900 dark:text-slate-100">Neon Afterglow</td>
+<td class="px-4 py-3 text-slate-600 dark:text-slate-400">Solaris</td>
+<td class="px-4 py-3 mono-text text-sm text-slate-500">03:45</td>
+<td class="px-4 py-3 mono-text text-sm text-slate-500">124</td>
+<td class="px-4 py-3">
+<span class="bg-slate-200 dark:bg-surface px-2 py-1 rounded text-[10px] font-bold uppercase tracking-tight">Synthwave</span>
+</td>
+<td class="px-4 py-3 pr-8">
+<span class="flex items-center gap-1.5 text-accent-teal text-xs font-bold uppercase tracking-wide">
+<span class="w-2 h-2 rounded-full bg-accent-teal shadow-[0_0_8px_rgba(0,212,170,0.6)]"></span>
+                                Cleared
+                            </span>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-primary/5 transition-colors group">
+<td class="px-8 py-3">
+<div class="w-10 h-10 rounded bg-surface border border-primary/20 flex items-center justify-center overflow-hidden">
+<div class="w-full h-full bg-gradient-to-tr from-indigo-600 to-purple-600 opacity-80" data-alt="Deep purple galactic nebula artwork"></div>
+</div>
+</td>
+<td class="px-4 py-3 font-semibold text-slate-900 dark:text-slate-100">Midnight City</td>
+<td class="px-4 py-3 text-slate-600 dark:text-slate-400">Luna Voce</td>
+<td class="px-4 py-3 mono-text text-sm text-slate-500">04:12</td>
+<td class="px-4 py-3 mono-text text-sm text-slate-500">118</td>
+<td class="px-4 py-3">
+<span class="bg-slate-200 dark:bg-surface px-2 py-1 rounded text-[10px] font-bold uppercase tracking-tight">Dream Pop</span>
+</td>
+<td class="px-4 py-3 pr-8">
+<span class="flex items-center gap-1.5 text-accent-teal text-xs font-bold uppercase tracking-wide">
+<span class="w-2 h-2 rounded-full bg-accent-teal shadow-[0_0_8px_rgba(0,212,170,0.6)]"></span>
+                                Cleared
+                            </span>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-primary/5 transition-colors group">
+<td class="px-8 py-3">
+<div class="w-10 h-10 rounded bg-surface border border-primary/20 flex items-center justify-center overflow-hidden">
+<div class="w-full h-full bg-gradient-to-b from-slate-700 to-black opacity-80" data-alt="Monochrome minimalist grid pattern"></div>
+</div>
+</td>
+<td class="px-4 py-3 font-semibold text-slate-900 dark:text-slate-100">Cyber Pulse</td>
+<td class="px-4 py-3 text-slate-600 dark:text-slate-400">Data Drift</td>
+<td class="px-4 py-3 mono-text text-sm text-slate-500">02:58</td>
+<td class="px-4 py-3 mono-text text-sm text-slate-500">140</td>
+<td class="px-4 py-3">
+<span class="bg-slate-200 dark:bg-surface px-2 py-1 rounded text-[10px] font-bold uppercase tracking-tight">Techno</span>
+</td>
+<td class="px-4 py-3 pr-8">
+<span class="flex items-center gap-1.5 text-yellow-500 text-xs font-bold uppercase tracking-wide">
+<span class="w-2 h-2 rounded-full bg-yellow-500 shadow-[0_0_8px_rgba(234,179,8,0.6)]"></span>
+                                Pending
+                            </span>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-primary/5 transition-colors group">
+<td class="px-8 py-3">
+<div class="w-10 h-10 rounded bg-surface border border-primary/20 flex items-center justify-center overflow-hidden">
+<div class="w-full h-full bg-gradient-to-r from-teal-400 to-blue-500 opacity-80" data-alt="Soft ethereal teal gradient background"></div>
+</div>
+</td>
+<td class="px-4 py-3 font-semibold text-slate-900 dark:text-slate-100">Ethereal Echoes</td>
+<td class="px-4 py-3 text-slate-600 dark:text-slate-400">Aura</td>
+<td class="px-4 py-3 mono-text text-sm text-slate-500">05:20</td>
+<td class="px-4 py-3 mono-text text-sm text-slate-500">095</td>
+<td class="px-4 py-3">
+<span class="bg-slate-200 dark:bg-surface px-2 py-1 rounded text-[10px] font-bold uppercase tracking-tight">Ambient</span>
+</td>
+<td class="px-4 py-3 pr-8">
+<span class="flex items-center gap-1.5 text-accent-teal text-xs font-bold uppercase tracking-wide">
+<span class="w-2 h-2 rounded-full bg-accent-teal shadow-[0_0_8px_rgba(0,212,170,0.6)]"></span>
+                                Cleared
+                            </span>
+</td>
+</tr>
+<!-- Repeat for data density -->
+<tr class="hover:bg-slate-50 dark:hover:bg-primary/5 transition-colors group">
+<td class="px-8 py-3">
+<div class="w-10 h-10 rounded bg-surface border border-primary/20 flex items-center justify-center overflow-hidden">
+<div class="w-full h-full bg-gradient-to-bl from-orange-400 to-red-600 opacity-80" data-alt="Dynamic orange fire burst pattern"></div>
+</div>
+</td>
+<td class="px-4 py-3 font-semibold text-slate-900 dark:text-slate-100">Voltage Spike</td>
+<td class="px-4 py-3 text-slate-600 dark:text-slate-400">Circuit Breaker</td>
+<td class="px-4 py-3 mono-text text-sm text-slate-500">03:15</td>
+<td class="px-4 py-3 mono-text text-sm text-slate-500">128</td>
+<td class="px-4 py-3">
+<span class="bg-slate-200 dark:bg-surface px-2 py-1 rounded text-[10px] font-bold uppercase tracking-tight">House</span>
+</td>
+<td class="px-4 py-3 pr-8">
+<span class="flex items-center gap-1.5 text-accent-teal text-xs font-bold uppercase tracking-wide">
+<span class="w-2 h-2 rounded-full bg-accent-teal shadow-[0_0_8px_rgba(0,212,170,0.6)]"></span>
+                                Cleared
+                            </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Audio Player Bar -->
+<footer class="fixed bottom-0 left-64 right-0 h-24 bg-background-light dark:bg-[#12121A] border-t border-slate-200 dark:border-primary/30 px-8 flex items-center gap-8 z-20 shadow-[0_-10px_30px_rgba(0,0,0,0.3)]">
+<!-- Currently Playing -->
+<div class="flex items-center gap-4 w-1/4 min-w-[200px]">
+<div class="w-14 h-14 rounded-lg bg-surface flex items-center justify-center overflow-hidden shadow-lg shadow-black/40">
+<div class="w-full h-full bg-gradient-to-br from-primary to-accent-teal opacity-90" data-alt="Neon Afterglow track artwork preview"></div>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-bold truncate">Neon Afterglow</span>
+<span class="text-xs text-slate-500 dark:text-primary/60 truncate">Solaris</span>
+</div>
+<button class="text-slate-400 hover:text-primary transition-colors ml-2">
+<span class="material-symbols-outlined text-lg">favorite</span>
+</button>
+</div>
+<!-- Player Controls & Scrubber -->
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="flex items-center gap-6">
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">shuffle</span>
+</button>
+<button class="text-slate-200 hover:text-white transition-colors">
+<span class="material-symbols-outlined">skip_previous</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl">play_arrow</span>
+</button>
+<button class="text-slate-200 hover:text-white transition-colors">
+<span class="material-symbols-outlined">skip_next</span>
+</button>
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">repeat</span>
+</button>
+</div>
+<div class="w-full flex items-center gap-3">
+<span class="mono-text text-[10px] text-slate-500 w-10 text-right">01:17</span>
+<div class="flex-1 h-1.5 relative group cursor-pointer">
+<!-- Waveform Mock Scrubber -->
+<div class="absolute inset-0 flex items-center gap-0.5 opacity-20">
+<div class="w-1 h-3 bg-primary rounded-full"></div>
+<div class="w-1 h-5 bg-primary rounded-full"></div>
+<div class="w-1 h-2 bg-primary rounded-full"></div>
+<div class="w-1 h-4 bg-primary rounded-full"></div>
+<div class="w-1 h-6 bg-primary rounded-full"></div>
+<div class="w-1 h-3 bg-primary rounded-full"></div>
+<div class="w-1 h-4 bg-primary rounded-full"></div>
+<div class="w-1 h-2 bg-primary rounded-full"></div>
+<div class="w-1 h-5 bg-primary rounded-full"></div>
+<div class="w-1 h-6 bg-primary rounded-full"></div>
+<div class="w-1 h-4 bg-primary rounded-full"></div>
+<div class="w-1 h-3 bg-primary rounded-full"></div>
+<div class="w-1 h-2 bg-primary rounded-full"></div>
+<div class="w-1 h-5 bg-primary rounded-full"></div>
+<div class="w-1 h-6 bg-primary rounded-full"></div>
+<div class="w-1 h-4 bg-primary rounded-full"></div>
+<div class="w-1 h-3 bg-primary rounded-full"></div>
+<div class="w-1 h-4 bg-primary rounded-full"></div>
+<div class="w-1 h-2 bg-primary rounded-full"></div>
+<div class="w-1 h-5 bg-primary rounded-full"></div>
+<div class="w-1 h-6 bg-primary rounded-full"></div>
+<div class="w-1 h-4 bg-primary rounded-full"></div>
+<div class="w-1 h-3 bg-primary rounded-full"></div>
+</div>
+<div class="absolute inset-0 bg-slate-200 dark:bg-surface rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[35%] rounded-full relative">
+<div class="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full shadow-lg scale-0 group-hover:scale-100 transition-transform"></div>
+</div>
+</div>
+</div>
+<span class="mono-text text-[10px] text-slate-500 w-10">03:45</span>
+</div>
+</div>
+<!-- Volume & Secondary Controls -->
+<div class="w-1/4 flex items-center justify-end gap-4 min-w-[200px]">
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">queue_music</span>
+</button>
+<div class="flex items-center gap-2 w-32">
+<span class="material-symbols-outlined text-lg text-slate-400">volume_up</span>
+<div class="flex-1 h-1 bg-slate-200 dark:bg-surface rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[80%] rounded-full"></div>
+</div>
+</div>
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">fullscreen</span>
+</button>
+</div>
+</footer>
+</main>
+</body></html>

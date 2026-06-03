@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SoundGrid Contract List View</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6961ff",
+                        "background-light": "#f5f5f8",
+                        "background-dark": "#0F0F13",
+                        "surface-dark": "#1A1A24",
+                        "surface-elevated": "#242434",
+                        "border-dark": "#2A2A3D",
+                        "teal-mint": "#00D4AA",
+                        "coral-pink": "#FF6B6B"
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased overflow-x-hidden">
+<div class="relative flex h-screen w-full flex-col max-w-md mx-auto overflow-hidden border-x border-border-dark shadow-2xl">
+<!-- Top Navigation Bar -->
+<header class="flex flex-col gap-4 bg-background-light dark:bg-background-dark px-4 pt-6 pb-4 sticky top-0 z-10">
+<div class="flex items-center justify-between">
+<h1 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Contracts</h1>
+<button class="flex items-center justify-center size-10 rounded-full bg-slate-200 dark:bg-surface-elevated text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+<!-- Search & Filter Bar -->
+<div class="flex gap-2">
+<div class="flex-1 flex items-center bg-slate-200 dark:bg-surface-elevated rounded-xl px-3 border border-transparent focus-within:border-primary/50 transition-all">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400 text-xl">search</span>
+<input class="w-full bg-transparent border-none focus:ring-0 text-sm py-2.5 text-slate-900 dark:text-white placeholder:text-slate-500" placeholder="Search contracts..." type="text"/>
+</div>
+<button class="flex items-center justify-center size-11 rounded-xl bg-slate-200 dark:bg-surface-elevated text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined">tune</span>
+</button>
+</div>
+<!-- Tabs -->
+<div class="flex gap-6 mt-2 overflow-x-auto no-scrollbar">
+<button class="flex flex-col items-center gap-1 shrink-0">
+<span class="text-sm font-bold text-primary">All Contracts</span>
+<div class="h-1 w-6 bg-primary rounded-full"></div>
+</button>
+<button class="flex flex-col items-center gap-1 shrink-0 opacity-50">
+<span class="text-sm font-bold text-slate-600 dark:text-slate-400">Signed</span>
+<div class="h-1 w-6 bg-transparent rounded-full"></div>
+</button>
+<button class="flex flex-col items-center gap-1 shrink-0 opacity-50">
+<span class="text-sm font-bold text-slate-600 dark:text-slate-400">Pending</span>
+<div class="h-1 w-6 bg-transparent rounded-full"></div>
+</button>
+<button class="flex flex-col items-center gap-1 shrink-0 opacity-50">
+<span class="text-sm font-bold text-slate-600 dark:text-slate-400">Archived</span>
+<div class="h-1 w-6 bg-transparent rounded-full"></div>
+</button>
+</div>
+</header>
+<!-- Contract List Scroll Area -->
+<main class="flex-1 overflow-y-auto px-4 pb-24 space-y-3">
+<!-- Contract Card 1 -->
+<div class="bg-white dark:bg-surface-dark border border-slate-200 dark:border-border-dark p-4 rounded-xl shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg text-slate-900 dark:text-white leading-tight">Master Recording License</h3>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold tracking-wider uppercase bg-teal-mint/10 text-teal-mint border border-teal-mint/20">
+                        Signed
+                    </span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-400 mb-4">Artist x Galactic Records</p>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex flex-col">
+<span class="text-[10px] text-slate-400 dark:text-slate-500 uppercase tracking-widest font-bold">ISRC CODE</span>
+<code class="font-mono text-xs text-primary dark:text-primary/80">QM-423-19-01234</code>
+</div>
+<span class="text-xs text-slate-400 dark:text-slate-500">Oct 24, 2023</span>
+</div>
+</div>
+<!-- Contract Card 2 -->
+<div class="bg-white dark:bg-surface-dark border border-slate-200 dark:border-border-dark p-4 rounded-xl shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg text-slate-900 dark:text-white leading-tight">Sync Placement Agreement</h3>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold tracking-wider uppercase bg-coral-pink/10 text-coral-pink border border-coral-pink/20">
+                        Needs Signature
+                    </span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-400 mb-4">Producer Z x Netflix Series</p>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex flex-col">
+<span class="text-[10px] text-slate-400 dark:text-slate-500 uppercase tracking-widest font-bold">ISRC CODE</span>
+<code class="font-mono text-xs text-primary dark:text-primary/80">QM-882-23-45012</code>
+</div>
+<span class="text-xs text-slate-400 dark:text-slate-500">Nov 02, 2023</span>
+</div>
+</div>
+<!-- Contract Card 3 -->
+<div class="bg-white dark:bg-surface-dark border border-slate-200 dark:border-border-dark p-4 rounded-xl shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg text-slate-900 dark:text-white leading-tight">Remix Distribution Rights</h3>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold tracking-wider uppercase bg-teal-mint/10 text-teal-mint border border-teal-mint/20">
+                        Signed
+                    </span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-400 mb-4">DJ Hyper x Artist Y</p>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex flex-col">
+<span class="text-[10px] text-slate-400 dark:text-slate-500 uppercase tracking-widest font-bold">ISRC CODE</span>
+<code class="font-mono text-xs text-primary dark:text-primary/80">QM-771-21-99231</code>
+</div>
+<span class="text-xs text-slate-400 dark:text-slate-500">Oct 18, 2023</span>
+</div>
+</div>
+<!-- Contract Card 4 -->
+<div class="bg-white dark:bg-surface-dark border border-slate-200 dark:border-border-dark p-4 rounded-xl shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg text-slate-900 dark:text-white leading-tight">Mechanical Licensing</h3>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold tracking-wider uppercase bg-coral-pink/10 text-coral-pink border border-coral-pink/20">
+                        Needs Signature
+                    </span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-400 mb-4">Songwriter A x Publishing Co</p>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex flex-col">
+<span class="text-[10px] text-slate-400 dark:text-slate-500 uppercase tracking-widest font-bold">ISRC CODE</span>
+<code class="font-mono text-xs text-primary dark:text-primary/80">QM-109-22-00122</code>
+</div>
+<span class="text-xs text-slate-400 dark:text-slate-500">Oct 12, 2023</span>
+</div>
+</div>
+</main>
+<!-- Floating Action Button -->
+<button class="absolute bottom-24 right-6 size-14 bg-primary text-white rounded-full shadow-lg shadow-primary/40 flex items-center justify-center active:scale-95 transition-transform z-20">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+<!-- Bottom Navigation Bar -->
+<nav class="absolute bottom-0 w-full bg-slate-100 dark:bg-background-dark border-t border-slate-200 dark:border-border-dark px-6 py-3 flex justify-between items-center z-30">
+<a class="flex flex-col items-center gap-0.5 text-slate-500 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center gap-0.5 text-primary" href="#">
+<span class="material-symbols-outlined fill-[1]">description</span>
+<span class="text-[10px] font-bold">Contracts</span>
+</a>
+<a class="flex flex-col items-center gap-0.5 text-slate-500 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-[10px] font-medium">Artists</span>
+</a>
+<a class="flex flex-col items-center gap-0.5 text-slate-500 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-medium">Settings</span>
+</a>
+</nav>
+</div>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* Material symbols fill property */
+        .fill-\[1\] {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</body></html>

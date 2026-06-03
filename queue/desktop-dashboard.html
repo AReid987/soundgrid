@@ -1,0 +1,253 @@
+<html class="dark"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Outfit:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00d696",
+                        "background-light": "#f5f8f7",
+                        "background-dark": "#0f0f13",
+                        "accent-coral": "#FF6B6B",
+                        "surface-dark": "#1A1A24",
+                    },
+                    fontFamily: {
+                        "display": ["Outfit", "Inter", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Outfit', sans-serif;
+        }
+        .metric-font {
+            font-family: 'JetBrains Mono', monospace;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased">
+<div class="flex h-screen overflow-hidden">
+<!-- SideNavBar -->
+<aside class="w-64 flex-shrink-0 border-r border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark flex flex-col justify-between py-6">
+<div class="flex flex-col gap-8 px-4">
+<div class="flex items-center gap-3 px-2">
+<div class="bg-primary rounded-lg p-1.5">
+<span class="material-symbols-outlined text-background-dark text-2xl" data-icon="grid_view">grid_view</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">SoundGrid</h1>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-primary/10 text-primary font-medium transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-sm">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="text-sm">Contract</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="sync">sync</span>
+<span class="text-sm">Sync</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="podcasts">podcasts</span>
+<span class="text-sm">Live</span>
+</a>
+</nav>
+</div>
+<div class="px-4">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-sm">Settings</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col min-w-0 overflow-y-auto">
+<!-- Header/Top Bar -->
+<header class="flex items-center justify-between px-8 py-4 border-b border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark/50 backdrop-blur-md sticky top-0 z-10">
+<div class="flex-1 max-w-2xl">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors" data-icon="search">search</span>
+<input class="w-full bg-slate-100 dark:bg-surface-dark border-none rounded-xl py-2.5 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary/50 text-slate-900 dark:text-slate-100 placeholder:text-slate-500 transition-all" placeholder="Search contracts, artists, or sync licenses..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6 ml-8">
+<button class="relative p-2 text-slate-500 hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-accent-coral rounded-full"></span>
+</button>
+<div class="flex items-center gap-3 pl-6 border-l border-slate-200 dark:border-slate-800">
+<div class="text-right">
+<p class="text-sm font-semibold dark:text-white">Alex Rivers</p>
+<p class="text-xs text-slate-500">Music Producer</p>
+</div>
+<div class="h-10 w-10 rounded-full bg-slate-200 dark:bg-surface-dark overflow-hidden border-2 border-primary/20">
+<img class="w-full h-full object-cover" data-alt="User professional headshot profile picture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxIK-jXwl5IejsYmcDSZDvcJu_dispeGHf2xWfjhFwKMTsvSqJMiGBBST00J_tZYpt3MLmdz90QZIJu3tg1abRMgS9V93D1Yl27tCArqrM4P-ZjV-WJYdbxSpyFNEHdT6euSz6x6ob6Xq17BWJjYA4N-oleazXNIqGX9cRKWQd81CD9o6TTeBLC1QqOws3sGdSnBAh5M_Owk0-V5jFZzOioJC1XsQi6Ubrddm6E8r3NvrDlcXE1K2huCSkzs4OtPhKzD9scA2YJw"/>
+</div>
+</div>
+</div>
+</header>
+<div class="p-8 flex flex-col gap-8">
+<!-- Pending Actions -->
+<section>
+<h2 class="text-xl font-bold mb-5 dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-accent-coral" data-icon="bolt">bolt</span>
+                        Pending Actions
+                    </h2>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<!-- Card 1: Overdue -->
+<div class="group relative overflow-hidden bg-white dark:bg-surface-dark border border-accent-coral/20 rounded-2xl p-6 flex flex-col md:flex-row gap-6 hover:shadow-xl hover:shadow-accent-coral/5 transition-all">
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-accent-coral/10 text-accent-coral mb-3">Priority Action</span>
+<h3 class="text-lg font-bold dark:text-white mb-2">Overdue Signatures</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">3 sync licensing contracts are past their deadline and require immediate review and digital signature.</p>
+</div>
+<button class="mt-6 flex items-center justify-center gap-2 bg-accent-coral hover:bg-accent-coral/90 text-white text-sm font-bold py-2.5 px-6 rounded-xl transition-all w-fit">
+                                    Review Now
+                                    <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="w-full md:w-48 h-32 md:h-auto rounded-xl bg-slate-100 dark:bg-slate-800/50 overflow-hidden">
+<img class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500" data-alt="Hand holding pen over legal document paper" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBthch16txxebnvHIoi8K_BC9baucq0A5q_F8lHVUWA9ju0aKrPiPeqqER30lp2DZQ4TLpo23aLsYTAzokzolQRn-PeexAGtIBBBVzCcyQc3QONblbeAM2OsKBMmvGB4UFjskYgslD7fcmeAcUXA8DR6Ce7WSfpmVZ_QLGXKvq3ZLtTHyIMovOKFkWO88sHd7WO9EVvloQhTdsE7Oxsb2S4Ai-uCZgKWzMRmcb54j2aXEe2_j943vbIrPZ4rzqVTk-I9A2fFRP-Bw"/>
+</div>
+</div>
+<!-- Card 2: Approvals -->
+<div class="group relative overflow-hidden bg-white dark:bg-surface-dark border border-primary/20 rounded-2xl p-6 flex flex-col md:flex-row gap-6 hover:shadow-xl hover:shadow-primary/5 transition-all">
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary/10 text-primary mb-3">Review Required</span>
+<h3 class="text-lg font-bold dark:text-white mb-2">Pending Approvals</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">5 cue sheets and artist splits are waiting for your final approval before royalty distribution starts.</p>
+</div>
+<button class="mt-6 flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-background-dark text-sm font-bold py-2.5 px-6 rounded-xl transition-all w-fit">
+                                    View All
+                                    <span class="material-symbols-outlined text-sm" data-icon="checklist">checklist</span>
+</button>
+</div>
+<div class="w-full md:w-48 h-32 md:h-auto rounded-xl bg-slate-100 dark:bg-slate-800/50 overflow-hidden">
+<img class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500" data-alt="Digital tablet showing music waveform editing" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkLTzbuU7jcn2Cp7MPp_zlo4XT_GwiHC41WGTLxQAggA3cqynddb44ieTepKoNtpU-HDNfF8KmF3lkToWym4dQ2Zy5Z2LK-MV-lZ-QQdXeuFcD0g9rhz60HTJlalKppbEWAAkkkC1tSN7tKgV4AECfPLyCcVgTmKB7-fY90jt-N5BN2JfaOU8MfuVE40dINXRjXrP7QTSrXqppfzc-5-8H4WzNfHewEoZo5qxUpCBRfQ854cKpuFTIJSnMh-IbqYjT6vu5dmBH7g"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Grid -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="bg-white dark:bg-surface-dark p-5 rounded-2xl border border-slate-200 dark:border-slate-800">
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-primary p-2 bg-primary/10 rounded-lg" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="text-[10px] font-bold text-primary px-2 py-0.5 bg-primary/10 rounded-full">+12.5%</span>
+</div>
+<p class="text-xs text-slate-500 uppercase tracking-wider font-semibold">In Escrow</p>
+<h4 class="metric-font text-2xl font-bold mt-1 dark:text-white">$42,850.00</h4>
+</div>
+<div class="bg-white dark:bg-surface-dark p-5 rounded-2xl border border-slate-200 dark:border-slate-800">
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-slate-400 p-2 bg-slate-100 dark:bg-slate-800 rounded-lg" data-icon="history_edu">history_edu</span>
+</div>
+<p class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Active Contracts</p>
+<h4 class="metric-font text-2xl font-bold mt-1 dark:text-white">18</h4>
+</div>
+<div class="bg-white dark:bg-surface-dark p-5 rounded-2xl border border-slate-200 dark:border-slate-800">
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-slate-400 p-2 bg-slate-100 dark:bg-slate-800 rounded-lg" data-icon="pending_actions">pending_actions</span>
+</div>
+<p class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Pending Items</p>
+<h4 class="metric-font text-2xl font-bold mt-1 dark:text-white">12</h4>
+</div>
+<div class="bg-white dark:bg-surface-dark p-5 rounded-2xl border border-slate-200 dark:border-slate-800">
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-slate-400 p-2 bg-slate-100 dark:bg-slate-800 rounded-lg" data-icon="task_alt">task_alt</span>
+</div>
+<p class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Completed</p>
+<h4 class="metric-font text-2xl font-bold mt-1 dark:text-white">142</h4>
+</div>
+</section>
+<!-- Recent Activity Section -->
+<section class="bg-white dark:bg-surface-dark rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+<div class="px-6 py-5 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+<h3 class="font-bold dark:text-white">Recent Activity</h3>
+<button class="text-sm text-primary font-medium hover:underline">View History</button>
+</div>
+<div class="divide-y divide-slate-100 dark:divide-slate-800">
+<!-- Activity Item 1 -->
+<div class="px-6 py-4 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
+<div class="flex items-center gap-4">
+<div class="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="draw">draw</span>
+</div>
+<div>
+<p class="text-sm font-semibold dark:text-white">Contract Signed</p>
+<p class="text-xs text-slate-500">Universal Pictures - "Neon Dreams" Sync License</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-xs font-medium dark:text-slate-300">2h ago</p>
+<p class="text-[10px] text-slate-500">Action by: Legal Team</p>
+</div>
+</div>
+<!-- Activity Item 2 -->
+<div class="px-6 py-4 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
+<div class="flex items-center gap-4">
+<div class="h-10 w-10 rounded-full bg-accent-coral/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-accent-coral text-xl" data-icon="search_insights">search_insights</span>
+</div>
+<div>
+<p class="text-sm font-semibold dark:text-white">New Brief Match</p>
+<p class="text-xs text-slate-500">Netflix Series: High Energy Electronic (Upbeat)</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-xs font-medium dark:text-slate-300">5h ago</p>
+<p class="text-[10px] text-slate-500">Match score: 98%</p>
+</div>
+</div>
+<!-- Activity Item 3 -->
+<div class="px-6 py-4 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
+<div class="flex items-center gap-4">
+<div class="h-10 w-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-500 text-xl" data-icon="payments">payments</span>
+</div>
+<div>
+<p class="text-sm font-semibold dark:text-white">Payment Released</p>
+<p class="text-xs text-slate-500">Q3 Performance Royalties - ASCAP/BMI</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-xs font-medium dark:text-slate-300">Yesterday</p>
+<p class="text-[10px] text-primary">+$1,240.50</p>
+</div>
+</div>
+<!-- Activity Item 4 -->
+<div class="px-6 py-4 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
+<div class="flex items-center gap-4">
+<div class="h-10 w-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-500 text-xl" data-icon="person_add">person_add</span>
+</div>
+<div>
+<p class="text-sm font-semibold dark:text-white">New Collaborator</p>
+<p class="text-xs text-slate-500">Sarah Jenkins joined the 'Midnight Studio' project</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-xs font-medium dark:text-slate-300">Oct 24, 2023</p>
+<p class="text-[10px] text-slate-500">Invited by you</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+</div>
+</body></html>

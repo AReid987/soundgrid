@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SoundGrid Professional Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6169ff",
+                        "accent-coral": "#FF6B6B",
+                        "accent-teal": "#2DD4BF",
+                        "background-light": "#f5f5f8",
+                        "background-dark": "#0f0f13",
+                        "surface-dark": "#1A1A24",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden pb-24">
+<header class="sticky top-0 z-20 flex items-center justify-between bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-4 py-4 border-b border-slate-200 dark:border-slate-800">
+<div class="flex size-10 shrink-0 items-center">
+<div class="bg-primary/20 rounded-full p-1 border border-primary/30">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-8" data-alt="Professional user profile avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuClsXlg8eekhzbsYlwpmmaMgoiv32f4VHe69KE7SZNr8n0Igkocp6VkA190RNOOiq2Cby-JrgHNTeevYWaIjrfir9WNftqDCTHRrKx65SReGzZBzt-2hesa0ukLG3XU9hIfnI5PJe5vULq_OI-RSskNdiBRS2ZoUG-zoevambwffnAwLoyJLu6welP6C1YD5tkEMOmWLztrMr6dermBQqt-aDFBLQTAdnSUKVoW96eGtmW9z12JARhxcDkWwM6XA4lZSgw3QeYD3A");'></div>
+</div>
+</div>
+<h1 class="text-slate-900 dark:text-white text-xl font-bold tracking-tight flex-1 text-center">SoundGrid</h1>
+<div class="flex w-10 items-center justify-end">
+<button class="relative flex items-center justify-center p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-700 dark:text-slate-300">notifications</span>
+<span class="absolute top-2 right-2 flex h-2 w-2 rounded-full bg-accent-coral"></span>
+</button>
+</div>
+</header>
+<main class="flex flex-col gap-6 p-4">
+<section>
+<div class="flex items-center justify-between mb-3">
+<h2 class="text-slate-900 dark:text-white text-lg font-bold">Pending Actions</h2>
+<span class="text-xs font-mono text-primary px-2 py-1 bg-primary/10 rounded">2 NEW</span>
+</div>
+<div class="space-y-3">
+<div class="relative overflow-hidden flex flex-col gap-3 rounded-xl bg-slate-100 dark:bg-surface-dark p-4 border-l-4 border-accent-coral shadow-sm">
+<div class="flex justify-between items-start">
+<div class="flex flex-col gap-1">
+<p class="text-accent-coral text-xs font-bold uppercase tracking-wider font-mono">Urgent</p>
+<p class="text-slate-900 dark:text-white text-base font-bold">Overdue Signature</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Contract #882 requires immediate attention from management.</p>
+</div>
+<div class="hidden sm:block size-16 bg-slate-200 dark:bg-slate-800 rounded-lg shrink-0 overflow-hidden">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover" data-alt="Digital contract signature conceptual image" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCsuj7_7jUlwzqq-6075bgDNsaDZmm5z0z9JEEzIcLQwk18kjqqzsQK4byQO0-9rIpxwNWiX7W84CywHsWuRD3GMnnpYIqQOwXj6Wz97WA_RgJkIXkBgCT2BGtw9fa1-VvLKP4RyT9NowHoe812Z1Q_gwqsz-tzrWCH1HXdOdCgsNKd4CDSHdnjdbYS835pxpojL3IyRb8z7Otqqt1bTHKnFT6AW9GBf4ded1XstT3o_XqDaf4B-1-8sgiaSY08ddgZur9mVd5dvg");'></div>
+</div>
+</div>
+<button class="flex items-center justify-center rounded-lg h-9 px-4 bg-primary text-white text-sm font-bold w-full sm:w-fit transition-opacity hover:opacity-90">
+<span>Sign Now</span>
+<span class="material-symbols-outlined ml-2 text-sm">draw</span>
+</button>
+</div>
+<div class="flex flex-col gap-3 rounded-xl bg-slate-100 dark:bg-surface-dark p-4 border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex flex-col gap-1">
+<p class="text-slate-900 dark:text-white text-base font-bold">Action Required</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Review terms for upcoming sync deal with Universal Motion.</p>
+</div>
+<button class="flex items-center justify-center rounded-lg h-9 px-4 bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-white text-sm font-bold w-fit hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors">
+<span>Review</span>
+<span class="material-symbols-outlined ml-2 text-sm">visibility</span>
+</button>
+</div>
+</div>
+</section>
+<section>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold mb-3">Portfolio Overview</h2>
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-slate-100 dark:bg-surface-dark p-4 rounded-xl border border-slate-200 dark:border-slate-800 flex flex-col gap-1">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium">In Escrow</p>
+<p class="text-accent-teal text-xl font-bold font-mono">$12.4k</p>
+</div>
+<div class="bg-slate-100 dark:bg-surface-dark p-4 rounded-xl border border-slate-200 dark:border-slate-800 flex flex-col gap-1">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium">Active Contracts</p>
+<p class="text-slate-900 dark:text-white text-xl font-bold font-mono">18</p>
+</div>
+<div class="bg-slate-100 dark:bg-surface-dark p-4 rounded-xl border border-slate-200 dark:border-slate-800 flex flex-col gap-1">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium">Pending Items</p>
+<p class="text-slate-900 dark:text-white text-xl font-bold font-mono">05</p>
+</div>
+<div class="bg-slate-100 dark:bg-surface-dark p-4 rounded-xl border border-slate-200 dark:border-slate-800 flex flex-col gap-1">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium">Completed</p>
+<p class="text-primary text-xl font-bold font-mono">142</p>
+</div>
+</div>
+</section>
+<section>
+<div class="flex items-center justify-between mb-3">
+<h2 class="text-slate-900 dark:text-white text-lg font-bold">Recent Activity</h2>
+<button class="text-primary text-xs font-bold uppercase tracking-wider">View All</button>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-4">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div class="flex flex-col border-b border-slate-200 dark:border-slate-800 pb-2 w-full">
+<p class="text-slate-900 dark:text-white text-sm font-semibold">New release signed</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-mono italic">"Midnight City" - Sync License</p>
+</div>
+<span class="text-[10px] text-slate-400 font-mono shrink-0">2h ago</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-accent-teal/10 text-accent-teal">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<div class="flex flex-col border-b border-slate-200 dark:border-slate-800 pb-2 w-full">
+<p class="text-slate-900 dark:text-white text-sm font-semibold">Royalty Payout Dispatched</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-mono italic">Quarterly Earnings Q3</p>
+</div>
+<span class="text-[10px] text-slate-400 font-mono shrink-0">5h ago</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-accent-coral/10 text-accent-coral">
+<span class="material-symbols-outlined">person_add</span>
+</div>
+<div class="flex flex-col w-full">
+<p class="text-slate-900 dark:text-white text-sm font-semibold">Collaborator Added</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-mono italic">Sarah Jenkins (Producer)</p>
+</div>
+<span class="text-[10px] text-slate-400 font-mono shrink-0">Yesterday</span>
+</div>
+</div>
+</section>
+</main>
+<button class="fixed bottom-24 right-6 flex size-14 items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/40 hover:scale-105 active:scale-95 transition-transform z-30">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+<nav class="fixed bottom-0 left-0 right-0 z-40 flex h-20 items-center justify-around border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-background-dark/95 backdrop-blur-lg px-2 pb-2">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined text-2xl font-variation-fill">description</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Contract</span>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl">sync</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Sync</span>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl">sensors</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Live</span>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl">person</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Profile</span>
+</a>
+</nav>
+</div>
+</body></html>

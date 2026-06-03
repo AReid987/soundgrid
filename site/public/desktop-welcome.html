@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SoundGrid - Welcome Success</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Outfit:wght@400;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6961ff",
+                        "success-teal": "#00D4AA",
+                        "background-light": "#f5f5f8",
+                        "background-dark": "#0F0F13",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "outfit": ["Outfit", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 transition-colors duration-300">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Navigation -->
+<header class="flex items-center justify-between border-b border-white/5 px-8 py-4 lg:px-20">
+<div class="flex items-center gap-3">
+<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-3xl">grid_view</span>
+</div>
+<h2 class="text-xl font-bold tracking-tight font-outfit">SoundGrid</h2>
+</div>
+<div class="flex items-center gap-10">
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium opacity-60 hover:opacity-100 transition-opacity" href="#">Dashboard</a>
+<a class="text-sm font-medium opacity-60 hover:opacity-100 transition-opacity" href="#">Contracts</a>
+<a class="text-sm font-medium opacity-60 hover:opacity-100 transition-opacity" href="#">Artists</a>
+<a class="text-sm font-medium opacity-60 hover:opacity-100 transition-opacity" href="#">Analytics</a>
+</nav>
+<div class="h-10 w-10 rounded-full border-2 border-primary/20 bg-cover bg-center" data-alt="User profile avatar showing a professional male" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAbhknxavHTTN7TEPja1YncOCA5nwZU0QnfmuD3n8hTqi8cGtA9nYlhMl-OroYbOPTmSz0PFDQvv5WjZ-EvpyQ_Y_wMgLFsURqdqBvLTTHDUQnbU2kmQbei387h2QQSrzVBqgzkcygPjL2ml5HtPFePAsyVynWgMGZk1IOCckCpbHmn66n1ecnOKbdPmxphVtonDtFVzJ2ZqotATRobIgrsrQMNxecIL_h-Qgm9cbzBm_H-DhVjkkw_3s9NRn2BoeUulnE_dK24xQ");'>
+</div>
+</div>
+</header>
+<!-- Main Content Section -->
+<main class="flex flex-1 flex-col items-center justify-center px-6 py-20 text-center">
+<!-- Success Icon -->
+<div class="group relative mb-10 flex items-center justify-center">
+<div class="absolute inset-0 scale-150 animate-pulse bg-success-teal/20 blur-3xl rounded-full"></div>
+<div class="relative flex h-24 w-24 items-center justify-center rounded-full bg-success-teal/10 border border-success-teal/30 text-success-teal shadow-[0_0_40px_rgba(0,212,170,0.2)]">
+<span class="material-symbols-outlined text-6xl font-bold">check</span>
+</div>
+</div>
+<!-- Hero Text -->
+<div class="max-w-2xl space-y-6">
+<h1 class="font-outfit text-6xl font-black tracking-tight text-slate-900 dark:text-white lg:text-7xl">
+                        You're all set
+                    </h1>
+<p class="text-lg leading-relaxed text-slate-600 dark:text-slate-400 font-medium max-w-lg mx-auto">
+                        Your professional profile is active. You can now start managing your music business with precision.
+                    </p>
+</div>
+<!-- CTA -->
+<div class="mt-12">
+<button class="group flex h-14 min-w-[240px] items-center justify-center gap-3 rounded-xl bg-primary px-8 text-lg font-bold text-white shadow-xl shadow-primary/20 transition-all hover:scale-105 active:scale-95">
+<span>Create first contract</span>
+<span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</button>
+<p class="mt-6 text-sm font-medium opacity-40">Or explore your <a class="underline hover:text-primary transition-colors" href="#">dashboard</a> first</p>
+</div>
+<!-- Visual Element: Abstract Waveform -->
+<div class="mt-20 w-full max-w-4xl opacity-20 dark:opacity-30">
+<div class="h-32 w-full rounded-2xl bg-gradient-to-r from-transparent via-primary to-transparent" data-alt="Abstract musical waveform pattern gradient" style="mask-image: radial-gradient(circle, black 1px, transparent 1px); mask-size: 8px 8px;">
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="flex flex-col items-center gap-8 border-t border-white/5 px-8 py-12 text-center lg:px-20">
+<div class="flex flex-wrap items-center justify-center gap-x-12 gap-y-4">
+<a class="text-sm font-medium opacity-40 hover:opacity-100 transition-opacity" href="#">Support Center</a>
+<a class="text-sm font-medium opacity-40 hover:opacity-100 transition-opacity" href="#">Privacy Policy</a>
+<a class="text-sm font-medium opacity-40 hover:opacity-100 transition-opacity" href="#">Terms of Service</a>
+<a class="text-sm font-medium opacity-40 hover:opacity-100 transition-opacity" href="#">Security</a>
+</div>
+<div class="flex items-center gap-4">
+<div class="h-[1px] w-8 bg-white/10"></div>
+<p class="text-xs font-semibold uppercase tracking-widest opacity-20">© 2024 SoundGrid Music Group</p>
+<div class="h-[1px] w-8 bg-white/10"></div>
+</div>
+</footer>
+</div>
+</div>
+<!-- Decorative Background Glows -->
+<div class="pointer-events-none fixed -top-24 -left-24 h-[500px] w-[500px] rounded-full bg-primary/5 blur-[120px]"></div>
+<div class="pointer-events-none fixed -bottom-24 -right-24 h-[500px] w-[500px] rounded-full bg-success-teal/5 blur-[120px]"></div>
+</body></html>

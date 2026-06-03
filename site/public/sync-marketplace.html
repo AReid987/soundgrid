@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SoundGrid Sync Marketplace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00d6a1",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#0f231e",
+                        "surface-elevated": "#1a2e29",
+                        "surface-card": "#142a24",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Spline Sans', sans-serif;
+        }
+        .mono-text {
+            font-family: 'JetBrains Mono', monospace;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10">
+<div class="flex items-center justify-between p-4">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100 cursor-pointer">menu</span>
+<h1 class="text-lg font-bold tracking-tight">Sync Marketplace</h1>
+<div class="relative">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100 cursor-pointer">notifications</span>
+<span class="absolute top-0 right-0 block h-2 w-2 rounded-full bg-primary ring-2 ring-background-dark"></span>
+</div>
+</div>
+<div class="px-4 pb-4">
+<div class="flex h-11 w-full items-center justify-center rounded-xl bg-surface-elevated p-1 shadow-inner">
+<button class="flex h-full grow items-center justify-center rounded-lg px-2 text-sm font-medium text-primary/60 transition-all">
+                    Catalog
+                </button>
+<button class="flex h-full grow items-center justify-center rounded-lg bg-background-dark px-2 text-sm font-bold text-white shadow-sm transition-all">
+                    Marketplace
+                </button>
+</div>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto px-4 py-2 space-y-4">
+<div class="flex gap-3">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-primary/40 text-xl">search</span>
+<input class="w-full h-12 bg-surface-elevated border-none rounded-xl pl-10 pr-4 text-sm focus:ring-1 focus:ring-primary/50 placeholder:text-primary/30" placeholder="Search briefs, brands..." type="text"/>
+</div>
+<button class="w-12 h-12 flex items-center justify-center bg-surface-elevated rounded-xl text-primary">
+<span class="material-symbols-outlined">tune</span>
+</button>
+</div>
+<div class="flex gap-2 overflow-x-auto pb-2 no-scrollbar">
+<button class="whitespace-nowrap px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-xs font-semibold text-primary">High Budget</button>
+<button class="whitespace-nowrap px-4 py-2 rounded-full bg-surface-elevated text-xs font-medium text-slate-300">Energetic</button>
+<button class="whitespace-nowrap px-4 py-2 rounded-full bg-surface-elevated text-xs font-medium text-slate-300">Deadlines</button>
+<button class="whitespace-nowrap px-4 py-2 rounded-full bg-surface-elevated text-xs font-medium text-slate-300">Match %</button>
+</div>
+<div class="space-y-4">
+<div class="bg-surface-card rounded-xl p-5 border border-white/5 shadow-xl">
+<div class="flex justify-between items-start mb-3">
+<div class="bg-primary/20 text-primary px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">98% Match</div>
+<div class="mono-text text-[10px] text-slate-400 uppercase">Ends in 2h 45m</div>
+</div>
+<h3 class="text-lg font-bold text-white mb-1">Global EV Launch</h3>
+<p class="text-sm text-slate-400 mb-4 italic">Automotive Brand Commercial</p>
+<div class="flex items-center justify-between mb-4">
+<div class="flex flex-col">
+<span class="text-[10px] text-slate-500 uppercase font-bold mono-text">Budget</span>
+<span class="text-primary font-bold text-xl">$12,000</span>
+</div>
+<div class="flex flex-col text-right">
+<span class="text-[10px] text-slate-500 uppercase font-bold mono-text">Requested Mood</span>
+<span class="text-slate-200 text-sm">Cinematic, Powerful</span>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-background-dark font-bold py-3 rounded-lg transition-colors flex items-center justify-center gap-2">
+                    Submit Track <span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+<div class="bg-surface-card rounded-xl p-5 border border-white/5 shadow-xl">
+<div class="flex justify-between items-start mb-3">
+<div class="bg-primary/20 text-primary px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">92% Match</div>
+<div class="mono-text text-[10px] text-slate-400 uppercase">Deadline: Oct 24</div>
+</div>
+<h3 class="text-lg font-bold text-white mb-1">Spring Fashion Campaign</h3>
+<p class="text-sm text-slate-400 mb-4 italic">Social Media &amp; Web</p>
+<div class="flex items-center justify-between mb-4">
+<div class="flex flex-col">
+<span class="text-[10px] text-slate-500 uppercase font-bold mono-text">Budget</span>
+<span class="text-primary font-bold text-xl">$5,000</span>
+</div>
+<div class="flex flex-col text-right">
+<span class="text-[10px] text-slate-500 uppercase font-bold mono-text">Requested Mood</span>
+<span class="text-slate-200 text-sm">Modern, Energetic</span>
+</div>
+</div>
+<button class="w-full bg-primary/10 hover:bg-primary/20 text-primary font-bold py-3 rounded-lg transition-colors flex items-center justify-center gap-2 border border-primary/30">
+                    View Details
+                </button>
+</div>
+<div class="bg-surface-card rounded-xl p-5 border border-white/5 shadow-xl">
+<div class="flex justify-between items-start mb-3">
+<div class="bg-slate-700/50 text-slate-300 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">74% Match</div>
+<div class="mono-text text-[10px] text-slate-400 uppercase">Deadline: Oct 28</div>
+</div>
+<h3 class="text-lg font-bold text-white mb-1">Indie Film Soundtrack</h3>
+<p class="text-sm text-slate-400 mb-4 italic">Feature Length Narrative</p>
+<div class="flex items-center justify-between mb-4">
+<div class="flex flex-col">
+<span class="text-[10px] text-slate-500 uppercase font-bold mono-text">Budget</span>
+<span class="text-primary font-bold text-xl">$8,500</span>
+</div>
+<div class="flex flex-col text-right">
+<span class="text-[10px] text-slate-500 uppercase font-bold mono-text">Requested Mood</span>
+<span class="text-slate-200 text-sm">Melancholy, Ambient</span>
+</div>
+</div>
+<button class="w-full bg-primary/10 hover:bg-primary/20 text-primary font-bold py-3 rounded-lg transition-colors flex items-center justify-center gap-2 border border-primary/30">
+                    View Details
+                </button>
+</div>
+</div>
+<div class="h-20"></div>
+</main>
+<nav class="fixed bottom-0 left-0 right-0 bg-background-dark border-t border-primary/10 px-6 pb-6 pt-3 flex justify-between items-center z-50">
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-500 group-hover:text-primary transition-colors">home</span>
+<span class="text-[10px] font-medium text-slate-500 group-hover:text-primary uppercase tracking-tighter">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-500 group-hover:text-primary transition-colors">library_music</span>
+<span class="text-[10px] font-medium text-slate-500 group-hover:text-primary uppercase tracking-tighter">Catalog</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<div class="bg-primary/20 p-2 rounded-xl mb-[-4px]">
+<span class="material-symbols-outlined text-primary fill-1">sync</span>
+</div>
+<span class="text-[10px] font-bold text-primary uppercase tracking-tighter">Sync</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-500 group-hover:text-primary transition-colors">group</span>
+<span class="text-[10px] font-medium text-slate-500 group-hover:text-primary uppercase tracking-tighter">Network</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-500 group-hover:text-primary transition-colors">account_circle</span>
+<span class="text-[10px] font-medium text-slate-500 group-hover:text-primary uppercase tracking-tighter">Profile</span>
+</a>
+</nav>
+</body></html>

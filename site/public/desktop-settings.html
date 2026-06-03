@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SoundGrid | Settings &amp; Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6961ff",
+                        "background-light": "#f5f5f8",
+                        "background-dark": "#0F0F13",
+                        "surface-dark": "#1A1A24",
+                        "elevated-dark": "#242434",
+                    },
+                    fontFamily: {
+                        "display": ["Outfit", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Outfit', sans-serif;
+        }
+        .mono-font {
+            font-family: 'JetBrains Mono', monospace;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex">
+<!-- Fixed Left Sidebar -->
+<aside class="w-64 border-r border-slate-200 dark:border-primary/10 flex flex-col fixed h-full bg-background-light dark:bg-background-dark z-20">
+<div class="p-6 flex items-center gap-3">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-2xl">grid_view</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight">SoundGrid</h1>
+</div>
+<nav class="flex-1 px-4 space-y-2 mt-4">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/10 transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-medium text-sm">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/10 transition-colors" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-medium text-sm">Explore</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/10 transition-colors" href="#">
+<span class="material-symbols-outlined">library_music</span>
+<span class="font-medium text-sm">Library</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/10 transition-colors" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-medium text-sm">Messages</span>
+</a>
+<div class="pt-4 pb-2 px-3 text-[10px] uppercase tracking-widest text-slate-400 font-bold">Preferences</div>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1">settings</span>
+<span class="font-medium text-sm">Settings</span>
+</a>
+</nav>
+<div class="p-4 border-t border-slate-200 dark:border-primary/10">
+<div class="flex items-center gap-3 p-2">
+<div class="size-10 rounded-full bg-cover bg-center border border-primary/20" data-alt="User profile avatar placeholder" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuALqJo1djRLMU-SevlMC68L7riEbBjeOzG3ZYpPs0YVLTB6lAU_aZX59T3suUn97SKvPbiF4wKUbvroLUBWgkGMFvYPKmFKDbA0IXmqr01a3FxM89lXGwz9MXwaroO6tjPh6UUePnPXuQ_GNtsACZ69hx7q8_dE1Eu_VAI8Re2NAsxpqwVQlxmAngieJNR0y0fYC50dixhWJb6y7PcL0HtVBT1VTA3zDemk-WJAkFnhM-JcqbduLzrDS2uzhEyT5EP2DMdawLjuMA')"></div>
+<div class="overflow-hidden">
+<p class="text-sm font-semibold truncate">Alex Rivera</p>
+<p class="text-xs text-slate-500 truncate">Pro Producer</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 flex-1 flex flex-col">
+<!-- Top Navbar -->
+<header class="h-16 border-b border-slate-200 dark:border-primary/10 flex items-center justify-between px-8 bg-background-light/50 dark:bg-background-dark/50 backdrop-blur-md sticky top-0 z-10">
+<div class="flex items-center gap-4 flex-1 max-w-xl">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
+<input class="w-full bg-slate-100 dark:bg-elevated-dark border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-primary/50 text-slate-200" placeholder="Search artists, tracks, or contracts..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="size-10 flex items-center justify-center rounded-lg bg-slate-100 dark:bg-elevated-dark text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="size-10 flex items-center justify-center rounded-lg bg-slate-100 dark:bg-elevated-dark text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Split View Layout -->
+<div class="flex flex-1 p-8 gap-8">
+<!-- Left Sub-Navigation Panel (1/4) -->
+<div class="w-1/4">
+<h2 class="text-2xl font-bold mb-6">Settings</h2>
+<div class="space-y-1">
+<button class="w-full flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/10 text-primary text-sm font-semibold text-left">
+<span class="material-symbols-outlined text-xl">person</span>
+                        Profile
+                    </button>
+<button class="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 hover:text-slate-300 hover:bg-elevated-dark text-sm font-medium text-left transition-all">
+<span class="material-symbols-outlined text-xl">account_balance_wallet</span>
+                        Linked Wallets
+                    </button>
+<button class="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 hover:text-slate-300 hover:bg-elevated-dark text-sm font-medium text-left transition-all">
+<span class="material-symbols-outlined text-xl">payments</span>
+                        Billing
+                    </button>
+<button class="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 hover:text-slate-300 hover:bg-elevated-dark text-sm font-medium text-left transition-all">
+<span class="material-symbols-outlined text-xl">security</span>
+                        Security
+                    </button>
+<button class="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 hover:text-slate-300 hover:bg-elevated-dark text-sm font-medium text-left transition-all">
+<span class="material-symbols-outlined text-xl">notifications_active</span>
+                        Notifications
+                    </button>
+</div>
+</div>
+<!-- Right Content Panel (3/4) -->
+<div class="w-3/4">
+<div class="bg-surface-dark rounded-xl border border-primary/5 p-8 shadow-2xl">
+<!-- Profile Header Section -->
+<div class="flex items-center gap-6 mb-10 pb-10 border-b border-primary/10">
+<div class="relative group">
+<div class="size-24 rounded-2xl bg-cover bg-center border-2 border-primary/20 overflow-hidden shadow-lg" data-alt="Large user profile picture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCRnsriAUQPZ2sqRiz3kgx85RELZjFY2hLqARoJjGFm-OWXVGxnvRg_XdWvM0DQHKZt3Ms8Q5bwgGDAxuz2EtJr_qjlkzdGhL1KtnrgC_0IrcRla7_wvr68l_clWyLGiBCGR9CGgn5MPkbgJ_NETexYculjkrvKm2Q_Mg750hcxnfEtJ4_WgwQTz4tK51oJW_ZZY3wpLcALeE2FdW36eOYrqrRo2ieNzdWPmDBctP8d3C6FOsdbAsNoHhzA_2QaCg-SHOiI7eHs3w')"></div>
+<button class="absolute -bottom-2 -right-2 bg-primary text-white p-2 rounded-lg shadow-xl hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-sm">edit</span>
+</button>
+</div>
+<div>
+<h3 class="text-xl font-bold text-slate-100">Profile Information</h3>
+<p class="text-slate-400 text-sm mt-1">Update your photo and personal details.</p>
+</div>
+</div>
+<!-- Profile Form -->
+<div class="grid grid-cols-1 gap-6 mb-12">
+<div class="space-y-2">
+<label class="text-xs font-bold text-slate-400 uppercase tracking-widest">Display Name</label>
+<input class="w-full bg-elevated-dark border-none rounded-lg px-4 py-3 text-slate-100 focus:ring-2 focus:ring-primary focus:outline-none transition-all" type="text" value="Alex Rivera"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold text-slate-400 uppercase tracking-widest">Email Address</label>
+<input class="w-full bg-elevated-dark border-none rounded-lg px-4 py-3 text-slate-100 focus:ring-2 focus:ring-primary focus:outline-none transition-all" type="email" value="alex@soundgrid.io"/>
+</div>
+<div class="space-y-2 relative">
+<label class="text-xs font-bold text-slate-400 uppercase tracking-widest">Password</label>
+<input class="w-full bg-elevated-dark border-none rounded-lg px-4 py-3 text-slate-100 focus:ring-2 focus:ring-primary focus:outline-none transition-all" type="password" value="••••••••••••"/>
+<button class="absolute right-4 bottom-3 text-primary text-sm font-semibold hover:underline">Change</button>
+</div>
+</div>
+<!-- Linked Wallets Section -->
+<div class="mb-10">
+<div class="flex items-center justify-between mb-6">
+<div>
+<h3 class="text-lg font-bold text-slate-100">Linked Wallets</h3>
+<p class="text-slate-400 text-sm mt-1">Receive royalties and manage digital assets.</p>
+</div>
+<button class="bg-primary/20 text-primary px-4 py-2 rounded-lg text-sm font-bold hover:bg-primary/30 transition-all border border-primary/20 flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">add</span>
+                                Connect Wallet
+                            </button>
+</div>
+<div class="space-y-3">
+<div class="flex items-center justify-between p-4 bg-elevated-dark rounded-xl border border-primary/5">
+<div class="flex items-center gap-4">
+<div class="size-10 bg-[#f6851b]/10 rounded-lg flex items-center justify-center">
+<img alt="" class="size-6" data-alt="MetaMask Logo Icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBx1QnQotKllhtIEFhRVTOVr7ciQCSY_Y52I9jj2fY7awnQHoydpapk7MeM68d_ni7F74KR-VHOkjEmk6cDfQXwaYguOHOaGZ_q7B-IzCtGamlwtUyX6_dYWESwB_ftwmNzNuCQA6K8ljrSSsVtAV0p0KFZpPoclESyncMbq7xGUdmtkUZRviToqUbFrSNOxO_63DWra64YXW8aAJY8hwdASrqP5QoX-qzVh0Ifv2KcSpJpDGYSCO6tf2DvtrUoKEtfhw1SUfZJkA"/>
+</div>
+<div>
+<p class="text-sm font-bold">MetaMask Primary</p>
+<p class="mono-font text-xs text-primary/80 mt-1">0x71C765...d2b5</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2 py-1 bg-emerald-500/10 text-emerald-500 text-[10px] font-bold uppercase rounded">Connected</span>
+<button class="text-slate-500 hover:text-rose-500 p-1">
+<span class="material-symbols-outlined text-xl">delete</span>
+</button>
+</div>
+</div>
+<div class="flex items-center justify-between p-4 bg-elevated-dark rounded-xl border border-primary/5 opacity-80 hover:opacity-100 transition-opacity">
+<div class="flex items-center gap-4">
+<div class="size-10 bg-primary/10 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">account_balance_wallet</span>
+</div>
+<div>
+<p class="text-sm font-bold">Phantom Wallet</p>
+<p class="mono-font text-xs text-slate-500 mt-1">8vG9vH...qW9x</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="text-slate-500 hover:text-rose-500 p-1">
+<span class="material-symbols-outlined text-xl">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="flex items-center justify-end gap-4 pt-6 border-t border-primary/10">
+<button class="px-6 py-2.5 rounded-lg text-slate-400 font-semibold hover:text-slate-200 transition-colors">Discard</button>
+<button class="bg-primary text-white px-8 py-2.5 rounded-lg font-bold shadow-lg shadow-primary/30 hover:shadow-primary/50 hover:bg-primary/90 transition-all">
+                            Save Changes
+                        </button>
+</div>
+</div>
+<!-- Secondary Info Section -->
+<div class="mt-8 grid grid-cols-2 gap-8">
+<div class="bg-surface-dark p-6 rounded-xl border border-primary/5">
+<h4 class="font-bold mb-2">Account Status</h4>
+<div class="flex items-center gap-2 mb-4">
+<span class="size-2 rounded-full bg-emerald-500"></span>
+<span class="text-sm text-slate-300">Verified Professional Artist</span>
+</div>
+<button class="text-xs text-primary font-bold hover:underline">View Badge Settings</button>
+</div>
+<div class="bg-surface-dark p-6 rounded-xl border border-primary/5">
+<h4 class="font-bold mb-2">Storage Usage</h4>
+<div class="w-full bg-elevated-dark h-2 rounded-full mb-2 overflow-hidden">
+<div class="bg-primary h-full w-[65%]" data-width="65%"></div>
+</div>
+<p class="text-xs text-slate-400">12.4 GB of 20 GB used</p>
+<button class="text-xs text-primary font-bold hover:underline mt-4 block">Upgrade Plan</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

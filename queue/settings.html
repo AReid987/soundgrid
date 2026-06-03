@@ -1,0 +1,152 @@
+<html><head><meta charset="utf-8"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Outfit:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#463df5",
+          "secondary": "#6C63FF",
+          "accent-coral": "#FF6B6B",
+          "background-light": "#f6f5f8",
+          "background-dark": "#0F0F13",
+          "surface-dark": "#1A1A24",
+        },
+        fontFamily: {
+          "display": ["Space Grotesk", "sans-serif"],
+          "outfit": ["Outfit", "sans-serif"],
+          "mono": ["JetBrains Mono", "monospace"]
+        },
+        borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+      },
+    },
+  }
+</script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="dark bg-background-dark font-display text-slate-100">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden pb-20">
+<!-- Header -->
+<div class="flex items-center bg-background-dark/80 backdrop-blur-md sticky top-0 z-10 p-4 justify-between border-b border-white/5">
+<div class="text-slate-100 flex size-10 items-center justify-start">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<h2 class="text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center font-outfit">Settings</h2>
+<div class="flex w-10 items-center justify-end">
+<button class="flex cursor-pointer items-center justify-center rounded-lg h-10 w-10 bg-transparent text-slate-100">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Profile Summary -->
+<div class="flex p-6 flex-col items-center">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-32 w-32 ring-4 ring-primary/20" data-alt="Professional portrait of Marcus Sterling smiling" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCzPt4r541LjcRCgHnQ7ZTn10TdnFhXDkMgkbcPOX4yrSGwXjm43ZCC1uPWP8gejx9H6xq86m0YIWBgFKgzwg7FPmI3x1VXgsMzCnXkjwRV9W382cgQNxEqth1LXHaqP2bxlbduJCPRQdvIG8Ty3sV9K35-nfJcJeXu5l0FUbe7I8E2SfUISJDzhW8a_3TTqZSkljUrVhLePiPhK7sViBRnAnJcPDIxVUn8yScUY1OKehutWaMUhjBjN12ss8ZXSPQYMasAKyRQiw");'>
+</div>
+<div class="absolute bottom-0 right-0 bg-primary p-1.5 rounded-full border-4 border-background-dark text-white flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">edit</span>
+</div>
+</div>
+<div class="mt-4 flex flex-col items-center">
+<h1 class="text-slate-100 text-2xl font-bold font-outfit tracking-tight">Marcus Sterling</h1>
+<div class="mt-2 flex items-center gap-2">
+<span class="px-3 py-1 rounded-full bg-secondary/20 text-secondary text-xs font-semibold uppercase tracking-wider">Producer</span>
+</div>
+</div>
+</div>
+<!-- Billing Card -->
+<div class="px-4 py-2">
+<div class="flex flex-col rounded-xl overflow-hidden bg-surface-dark border border-white/5 shadow-xl">
+<div class="p-5 flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-slate-400 text-xs font-medium uppercase tracking-widest mb-1">Current Subscription</p>
+<p class="text-white text-xl font-bold font-outfit">Professional Plan</p>
+</div>
+<div class="bg-primary/10 text-primary p-2 rounded-lg">
+<span class="material-symbols-outlined">verified_user</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-slate-400 text-sm font-normal">Next billing date</p>
+<p class="text-secondary font-mono text-base font-medium">2024-10-15</p>
+</div>
+<button class="w-full flex cursor-pointer items-center justify-center rounded-lg h-11 px-4 bg-primary/20 text-primary hover:bg-primary/30 transition-colors text-sm font-bold">
+<span class="truncate">Manage Plan</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Navigation List -->
+<div class="mt-6 flex flex-col">
+<h3 class="px-5 mb-2 text-slate-500 text-xs font-bold uppercase tracking-widest">Account Settings</h3>
+<div class="flex flex-col bg-surface-dark/30">
+<a class="flex items-center gap-4 px-5 py-4 border-b border-white/5 active:bg-white/5" href="#">
+<span class="material-symbols-outlined text-slate-400">person</span>
+<span class="flex-1 text-slate-200 font-medium">Account Information</span>
+<span class="material-symbols-outlined text-slate-600">chevron_right</span>
+</a>
+<a class="flex items-center gap-4 px-5 py-4 border-b border-white/5 active:bg-white/5" href="#">
+<span class="material-symbols-outlined text-slate-400">notifications</span>
+<span class="flex-1 text-slate-200 font-medium">Notifications</span>
+<span class="material-symbols-outlined text-slate-600">chevron_right</span>
+</a>
+<a class="flex items-center gap-4 px-5 py-4 border-b border-white/5 active:bg-white/5" href="#">
+<span class="material-symbols-outlined text-slate-400">shield</span>
+<span class="flex-1 text-slate-200 font-medium">Security &amp; Privacy</span>
+<span class="material-symbols-outlined text-slate-600">chevron_right</span>
+</a>
+</div>
+</div>
+<!-- Linked Wallets -->
+<div class="mt-6 flex flex-col">
+<h3 class="px-5 mb-2 text-slate-500 text-xs font-bold uppercase tracking-widest">Linked Wallets</h3>
+<div class="flex flex-col bg-surface-dark/30 px-4 py-2 gap-3">
+<div class="flex items-center gap-3 p-3 rounded-lg bg-surface-dark border border-white/5">
+<div class="size-8 rounded-full bg-slate-800 flex items-center justify-center overflow-hidden">
+<img class="size-5" data-alt="Ethereum logo icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAov0ja9vF0GxB23bhqGdOSh7bG6FcY_NiDn5bVJLf3PKfcmKiw6Rs76JLbKTA-3Bq1NUBPCsWtpG7LSRgdmB7BO8RTwUOfuGPSQ4WE8QV4eJW3RSzcDLQP6l3DYMdHsEEVRQpxUrgHv5MUFijo7DN-pI4wCfwSyzoET8L2PBAyC9c0gn8UaG7FDYuixH4egC0W6rgSxad2dGo6f1Pvaf0kbahoLXRITR_oVtSOrB2KzlchR5hrFYIfZ6dhT2vvejCQXf7PTbBEPA"/>
+</div>
+<div class="flex-1">
+<p class="text-slate-200 text-sm font-medium">Main Wallet</p>
+<p class="text-slate-500 text-xs font-mono truncate max-w-[180px]">0x71C...49b2</p>
+</div>
+<span class="text-xs font-medium text-emerald-400 bg-emerald-400/10 px-2 py-1 rounded">Active</span>
+</div>
+</div>
+</div>
+<!-- Log Out -->
+<div class="mt-8 px-4 pb-8">
+<button class="w-full flex items-center justify-center gap-2 rounded-xl h-14 bg-accent-coral/10 text-accent-coral border border-accent-coral/20 font-bold active:scale-[0.98] transition-transform">
+<span class="material-symbols-outlined">logout</span>
+<span>Log Out</span>
+</button>
+</div>
+<!-- Bottom Navigation Bar -->
+<div class="fixed bottom-0 left-0 right-0 z-50 flex border-t border-white/5 bg-background-dark/90 backdrop-blur-xl px-4 pb-6 pt-2">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">home</span>
+<p class="text-[10px] font-medium leading-normal tracking-wide">Home</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">explore</span>
+<p class="text-[10px] font-medium leading-normal tracking-wide">Explore</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">library_music</span>
+<p class="text-[10px] font-medium leading-normal tracking-wide">Library</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">person</span>
+<p class="text-[10px] font-medium leading-normal tracking-wide">Profile</p>
+</a>
+</div>
+</div>
+
+```</body></html>

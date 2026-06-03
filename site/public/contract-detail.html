@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SoundGrid Contract Detail View</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6961ff",
+                        "background-light": "#f5f5f8",
+                        "background-dark": "#0F0F13",
+                        "accent-teal": "#00D4AA",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Spline Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .mono-text {
+            font-family: 'JetBrains Mono', monospace;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen pb-32">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+<div class="flex items-center px-4 h-16 gap-3">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100">arrow_back</span>
+</button>
+<h1 class="text-lg font-bold truncate flex-1">Master Recording License - Lucid Dreams</h1>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100">more_vert</span>
+</button>
+</div>
+</header>
+<main class="p-4 space-y-6">
+<!-- Status Banner -->
+<div class="relative overflow-hidden rounded-xl border border-accent-teal/30 bg-accent-teal/10 p-5 flex items-center justify-between">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-accent-teal text-[20px]">verified_user</span>
+<p class="text-accent-teal text-base font-bold leading-tight">Funds Secured in Escrow</p>
+</div>
+<p class="text-slate-600 dark:text-slate-400 text-sm font-normal leading-normal">Smart contract verification successful</p>
+</div>
+<button class="flex h-8 px-4 items-center justify-center rounded-full bg-accent-teal text-background-dark text-xs font-bold uppercase tracking-wider">
+                View Ledger
+            </button>
+</div>
+<!-- Parties Section -->
+<section>
+<h3 class="text-slate-900 dark:text-slate-100 text-sm font-semibold uppercase tracking-wider px-1 mb-4">Contract Parties</h3>
+<div class="grid grid-cols-2 gap-3">
+<div class="flex flex-col items-center p-4 rounded-xl bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800">
+<div class="relative mb-3">
+<img class="w-16 h-16 rounded-full object-cover border-2 border-primary" data-alt="Modern high tech corporate logo placeholder" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDu2P_v9UKfNJL0uEJ89ZM-g2x94HYs-QArs_tFd4qQ-sKSCqgFtyllmxUpK5vPVixnRJsqY00llQxsWw-zlfgURku7FsPxzu3Q4e2TMN3yjWdo7Pe9XlHG--ZFWevUONXjhdT1aFTzhq__NfSCizmomcYSdMMx6bY7q0FD539M1RrrQ-sRqKU0dt0YG696ktoldH0Hs5DF9IyBYch7jkafZj6Zkru9AFmqRRaitA6uDf0xL22lGO2_xjDv2PjjlZ1gw7yJ0soE_w"/>
+<div class="absolute -bottom-1 -right-1 bg-primary text-white p-1 rounded-full text-[10px]">
+<span class="material-symbols-outlined text-xs">business</span>
+</div>
+</div>
+<span class="text-sm font-bold text-center">Nexus Records</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">Label</span>
+</div>
+<div class="flex flex-col items-center p-4 rounded-xl bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800">
+<div class="relative mb-3">
+<img class="w-16 h-16 rounded-full object-cover border-2 border-primary" data-alt="Professional profile photo of a woman artist" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkpIJFWcxbGFRyw1DbpiBjn9uT2AIxKLXy4Mz8fLEYP_xVGD1hilJ6QOOG7wdgwhsf-q4hGKCJG0Z3aOfedjEISK-ny0Sfu9tVVzX_dKIdkRZCZdwUc2M8zGaw_R_339-Gnq1wbFPkuRMyLYvUV5238UCaHNOaIxtXAOFedD991ZysWZztjRFGoAqO36_vSXTfkz9F0TsHPK-x8Ix11WFFbpKMJRfZR5uLk7J6yxtWy9ABTIi-xIbscFBh7V5lixYQaSwP9ZnVcg"/>
+<div class="absolute -bottom-1 -right-1 bg-primary text-white p-1 rounded-full text-[10px]">
+<span class="material-symbols-outlined text-xs">mic</span>
+</div>
+</div>
+<span class="text-sm font-bold text-center">Elena Vance</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">Artist</span>
+</div>
+</div>
+</section>
+<!-- Contract Clauses -->
+<section>
+<div class="flex items-center justify-between mb-4 px-1">
+<h3 class="text-slate-900 dark:text-slate-100 text-sm font-semibold uppercase tracking-wider">Contract Clauses</h3>
+<span class="text-xs text-primary font-medium px-2 py-1 bg-primary/10 rounded-full">8 Sections</span>
+</div>
+<div class="rounded-xl bg-slate-100 dark:bg-slate-800/30 border border-slate-200 dark:border-slate-800 p-4 mono-text text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+<p class="mb-4">
+<span class="text-primary font-bold">Clause 1.1:</span> The Artist hereby grants to the Label an exclusive, worldwide, perpetual license to reproduce, distribute, and publicly perform the master recording titled "Lucid Dreams".
+                </p>
+<p class="mb-4">
+<span class="text-primary font-bold">Clause 1.2:</span> Royalties shall be split 60% (Label) and 40% (Artist) after recoupment of initial production costs, not to exceed $15,000 USD.
+                </p>
+<p>
+<span class="text-primary font-bold">Clause 2.1:</span> Territory includes the universe and all digital realms now existing or hereafter created...
+                </p>
+<div class="mt-4 pt-4 border-t border-slate-200 dark:border-slate-800 flex justify-center">
+<button class="text-xs font-bold text-primary flex items-center gap-1">
+                        READ FULL AGREEMENT
+                        <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Timeline -->
+<section>
+<h3 class="text-slate-900 dark:text-slate-100 text-sm font-semibold uppercase tracking-wider px-1 mb-4">Milestones</h3>
+<div class="space-y-0 px-2">
+<!-- Timeline Item 1 -->
+<div class="flex gap-4">
+<div class="flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-accent-teal/20 flex items-center justify-center text-accent-teal">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+</div>
+<div class="w-0.5 h-10 bg-accent-teal/30"></div>
+</div>
+<div class="pt-1">
+<p class="text-sm font-bold">Created</p>
+<p class="text-xs text-slate-500">Oct 24, 2023 • 10:45 AM</p>
+</div>
+</div>
+<!-- Timeline Item 2 -->
+<div class="flex gap-4">
+<div class="flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-accent-teal/20 flex items-center justify-center text-accent-teal">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+</div>
+<div class="w-0.5 h-10 bg-accent-teal/30"></div>
+</div>
+<div class="pt-1">
+<p class="text-sm font-bold">Signed by Artist</p>
+<p class="text-xs text-slate-500">Oct 25, 2023 • 2:15 PM</p>
+</div>
+</div>
+<!-- Timeline Item 3 -->
+<div class="flex gap-4">
+<div class="flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-accent-teal flex items-center justify-center text-background-dark">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div class="w-0.5 h-10 bg-slate-200 dark:bg-slate-800"></div>
+</div>
+<div class="pt-1">
+<p class="text-sm font-bold">Funds Escrowed</p>
+<p class="text-xs text-slate-500">Oct 26, 2023 • 9:00 AM</p>
+</div>
+</div>
+<!-- Timeline Item 4 (Pending) -->
+<div class="flex gap-4">
+<div class="flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-slate-400">
+<span class="material-symbols-outlined text-[18px]">radio_button_unchecked</span>
+</div>
+</div>
+<div class="pt-1">
+<p class="text-sm font-bold text-slate-500">Label Final Signature</p>
+<p class="text-xs text-slate-500">Awaiting Action</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Action Area -->
+<div class="fixed bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-background-light dark:from-background-dark via-background-light dark:via-background-dark to-transparent">
+<button class="w-full h-14 bg-primary text-white rounded-xl font-bold text-lg shadow-xl shadow-primary/20 flex items-center justify-center gap-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined">draw</span>
+            Sign &amp; Finalize
+        </button>
+</div>
+</body></html>

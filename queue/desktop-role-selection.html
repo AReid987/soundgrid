@@ -1,0 +1,144 @@
+<html class="dark"><head>
+<meta charset="utf-8"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Outfit:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#6961ff",
+            "background-light": "#f5f5f8",
+            "background-dark": "#0F0F13",
+            "surface-dark": "#1A1A24",
+            "border-dark": "#2A2A3D",
+          },
+          fontFamily: {
+            "display": ["Space Grotesk", "sans-serif"],
+            "body": ["Outfit", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-body antialiased text-slate-900 dark:text-slate-100 transition-colors duration-300">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Main Layout Container -->
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between border-b border-border-dark px-8 py-4 lg:px-20 bg-background-dark/50 backdrop-blur-md sticky top-0 z-50">
+<div class="flex items-center gap-3">
+<div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-white">
+<span class="material-symbols-outlined text-2xl">grid_view</span>
+</div>
+<h2 class="font-display text-xl font-bold tracking-tight text-white">SoundGrid</h2>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2 text-sm font-medium text-slate-400">
+<span class="h-2 w-2 rounded-full bg-primary"></span>
+            Onboarding: Step 1 of 3
+          </div>
+<div class="h-10 w-10 rounded-full border-2 border-primary/30 p-0.5">
+<div class="h-full w-full rounded-full bg-center bg-no-repeat bg-cover" data-alt="User profile avatar of a young professional" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDsq94V9E1Q6wldOcgxMvxcb6s-Gd_fdHSiuo5XV5LFYhAponKeuAQvX9PC4s1j3fH7nY75n9lSEOu_nQLr3Dd2x0IyjtR06Fbecw-IRlF1zEdqM272BQm2oB4uEJMELr8DChu0_zWv8rDocF_KyXNJ-01IQlke67c3nFJl445xNRheHPrrD44z37TBN4xB_lEGDU7-WRL4leR24r5lsD9rOuQbOB1vNRGyeaaw3qfM8Xi0s3p8jrTkEMDAS-jirF9Gr7hReYaZDQ")'></div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex flex-1 flex-col items-center justify-center px-4 py-12 lg:px-20">
+<div class="w-full max-w-6xl">
+<!-- Header Section -->
+<div class="mb-12 text-center">
+<h1 class="font-display text-4xl font-bold tracking-tight text-white lg:text-5xl mb-4">Select Your Role</h1>
+<p class="mx-auto max-w-2xl text-lg text-slate-400">
+              Choose your primary professional identity to personalize your SoundGrid experience and connect with the right industry peers.
+            </p>
+</div>
+<!-- Roles Grid -->
+<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5">
+<!-- Artist Card -->
+<button class="group flex flex-col items-center gap-6 rounded-xl border border-border-dark bg-surface-dark p-6 transition-all hover:border-primary/50 hover:bg-surface-dark/80">
+<div class="relative h-24 w-24 overflow-hidden rounded-xl bg-slate-800">
+<div class="absolute inset-0 bg-center bg-no-repeat bg-cover opacity-80 group-hover:scale-110 transition-transform duration-500" data-alt="Artist performing on stage under stage lights" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB6WOr0RAp7RkpGM9mFUqGscd0CPorh0dDz51jWDGELkGsXg-cQYKZqy9hHSWTIzQkKOOelg0CVce5ZuLi__o_kh6s0T-vlWgsrqcnn2e0jLDO4SYPPB1uH-3exQdYKD2HPcL4fcSB9HplANPcCfluwSa6-uhUqpP3OPUikiFoJCciZ1Toxq7HWSSWTk4nqxjeNx1GoxP1MoV-K490jn7GrAX9fUyyTXa0qo1qgzy-jysRwvR65taYKraixS0Q7oHRbXLPFjNcT7g")'></div>
+</div>
+<div class="text-center">
+<h3 class="font-display text-lg font-bold text-white">Artist</h3>
+<p class="text-sm text-slate-400">Musician / Vocalist</p>
+</div>
+</button>
+<!-- Producer Card (Active) -->
+<button class="group relative flex flex-col items-center gap-6 rounded-xl border-2 border-primary bg-surface-dark p-6 ring-4 ring-primary/10 transition-all shadow-[0_0_30px_rgba(105,97,255,0.15)]">
+<div class="absolute -top-3 right-4 rounded-full bg-primary px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white">Selected</div>
+<div class="relative h-24 w-24 overflow-hidden rounded-xl bg-slate-800">
+<div class="absolute inset-0 bg-center bg-no-repeat bg-cover opacity-90 scale-105 transition-transform duration-500" data-alt="Modern music production studio equipment setup" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDTxzommBPUk1_BA6SInzZ0shghCvP-AD84II8ZvEpq-i6vF7prJzUM3ER2w9pVqbIqzNpMxsArfik98v-BFk8GJLiJIBqnRPpwKZ2QWq4a2Liavrylgiu-E-pRRDQv2O2GFCQYsW98Kq3de0bzYx1YnbCdtnmFrU7NKRAK8n19eA9xclCz3kMD0fUcB9n_4sCAEhosFwsGc-FkLMMRbBZCgr4Q_ftl9n6p3LehxWv7o2duNJfalHMruX3Doc2Me3Pafjosbrt1sA")'></div>
+</div>
+<div class="text-center">
+<h3 class="font-display text-lg font-bold text-white">Producer</h3>
+<p class="text-sm text-slate-400">Studio / Beatmaker</p>
+</div>
+</button>
+<!-- Supervisor Card -->
+<button class="group flex flex-col items-center gap-6 rounded-xl border border-border-dark bg-surface-dark p-6 transition-all hover:border-primary/50 hover:bg-surface-dark/80">
+<div class="relative h-24 w-24 overflow-hidden rounded-xl bg-slate-800">
+<div class="absolute inset-0 bg-center bg-no-repeat bg-cover opacity-80 group-hover:scale-110 transition-transform duration-500" data-alt="Professional workspace with headphones and documents" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA3IcxlD6TZi1HkzRhQWBuHRsaGiu24Q5jEekD2sZUY-Z2-TnZXzG0VPlwTVbO6tOUwnKajHNGLvNM4ruxgtQ3Dfz4IuLI5Lm59gYmL22_avQX0J7ihbe9NqVH_t4sxM5eN2bmwabot3W3jj2e5sbdIjPtrepczKQN2KaPcyDoTawJrK58Rsk0EZazqABy_quX2GazIOT4il7x2GX5rlm08KcRPvQehLw18xToDNWPZADlFP6OtqS6MPY7DmlRX6DmVutT45N3ufQ")'></div>
+</div>
+<div class="text-center">
+<h3 class="font-display text-lg font-bold text-white">Supervisor</h3>
+<p class="text-sm text-slate-400">Music Licensing</p>
+</div>
+</button>
+<!-- Venue Card -->
+<button class="group flex flex-col items-center gap-6 rounded-xl border border-border-dark bg-surface-dark p-6 transition-all hover:border-primary/50 hover:bg-surface-dark/80">
+<div class="relative h-24 w-24 overflow-hidden rounded-xl bg-slate-800">
+<div class="absolute inset-0 bg-center bg-no-repeat bg-cover opacity-80 group-hover:scale-110 transition-transform duration-500" data-alt="Empty concert hall with stage lighting" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAx7PGOnAVCi1srLRhAvQxwoxQBJWA9qPe_Rlgj0EIijfZa7qKFXEZBJFXIO55paLYamdnZ-hRWZiB7J4gusDzX8U317bMwzKEcYogYyvfOXEB5xEQAP1B9aaETI7STC0tBPnGS87_A2K6SMyMM3B6RycPQqQw2Pv8HiY4-r_wfNmQ7gRYMNlTp3JbpIPqQAAil4yPmNKZUf3SIEfz49NHK7r8V_4YyC6ohLRHGR2N9LfBF1wgNoJ7xQNy9CN9HTi8lLe5jzrk8pw")'></div>
+</div>
+<div class="text-center">
+<h3 class="font-display text-lg font-bold text-white">Venue</h3>
+<p class="text-sm text-slate-400">Event Space</p>
+</div>
+</button>
+<!-- Manager Card -->
+<button class="group flex flex-col items-center gap-6 rounded-xl border border-border-dark bg-surface-dark p-6 transition-all hover:border-primary/50 hover:bg-surface-dark/80">
+<div class="relative h-24 w-24 overflow-hidden rounded-xl bg-slate-800">
+<div class="absolute inset-0 bg-center bg-no-repeat bg-cover opacity-80 group-hover:scale-110 transition-transform duration-500" data-alt="Business meeting in a music office" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDigm9mDEWLi_CoZHsqXrR66ZJVnk9LPK8AlUeTDBKuBKAupYZsBuuriGWDaB38SKKGCy7rVjeVC8-3Z1ASjTnOVuMLLrYxkPW0d-lrcE23WawXH_wgPcNLhWe9k3-QQXwxVzBP4sqjmBcF-ehfF5gMOraDQlk_mwgFfvpCleXbZ-HPF0Oeju_rFGaBYm7wwJNunCEjcdeMBPm_mlqxGXM77s0cDf2fl38zmH45n3Kl6NRfKg3VFTSVOh2yACu_JMCNFT21dLCbHg")'></div>
+</div>
+<div class="text-center">
+<h3 class="font-display text-lg font-bold text-white">Manager</h3>
+<p class="text-sm text-slate-400">Talent Agent</p>
+</div>
+</button>
+</div>
+<!-- Action Footer -->
+<div class="mt-16 flex items-center justify-between border-t border-border-dark pt-8">
+<div class="flex items-center gap-4">
+<span class="text-sm text-slate-500">Need help deciding?</span>
+<a class="text-sm font-medium text-primary hover:underline" href="#">View role guide</a>
+</div>
+<div class="flex gap-4">
+<button class="flex min-w-[120px] items-center justify-center rounded-xl px-6 py-3 font-bold text-slate-400 transition-colors hover:text-white">
+                Back
+              </button>
+<button class="flex min-w-[160px] items-center justify-center gap-2 rounded-xl bg-primary px-8 py-3 font-bold text-white shadow-lg shadow-primary/20 transition-all hover:scale-[1.02] hover:bg-primary/90 active:scale-[0.98]">
+                Continue
+                <span class="material-symbols-outlined text-xl">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Branding -->
+<footer class="px-8 py-6 text-center text-slate-600">
+<p class="text-xs uppercase tracking-widest font-display">SoundGrid Ecosystem © 2024</p>
+</footer>
+</div>
+</div>
+</body></html>

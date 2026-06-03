@@ -1,0 +1,14 @@
+{
+  "name": "@soundgrid/api",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "echo 'Python apps do not require a build step'",
+    "dev": "pdm run dev",
+    "start": "pdm run start",
+    "lint": "pdm run lint",
+    "format": "pdm run format",
+    "typecheck": "pdm run typecheck",
+    "test": "pdm run test"
+  }
+}

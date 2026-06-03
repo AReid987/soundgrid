@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SoundGrid Venue Directory</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#6961ff",
+                "background-light": "#f5f5f8",
+                "background-dark": "#0F0F13",
+                "surface-dark": "#1A1A24",
+                "surface-elevated": "#242434",
+              },
+              fontFamily: {
+                "display": ["Outfit", "Inter", "sans-serif"],
+                "mono": ["JetBrains Mono", "monospace"]
+              },
+              borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Outfit', sans-serif;
+        }
+        .mono-text {
+            font-family: 'JetBrains Mono', monospace;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar -->
+<aside class="w-64 flex-shrink-0 bg-white dark:bg-background-dark border-r border-slate-200 dark:border-primary/10 flex flex-col">
+<div class="p-6 flex items-center gap-3">
+<div class="size-10 rounded-full bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined">grid_view</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-lg font-bold leading-tight tracking-tight">SoundGrid</h1>
+<p class="text-xs text-slate-500 dark:text-primary/60 font-medium">Pro Platform</p>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-2 mt-4">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-primary/10 rounded-lg transition-colors group" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-medium">Home</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-primary text-white rounded-lg transition-colors shadow-lg shadow-primary/20" href="#">
+<span class="material-symbols-outlined">sensors</span>
+<span class="font-medium">Live</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-primary/10 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-medium">Artists</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-primary/10 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">mic</span>
+<span class="font-medium">Studio</span>
+</a>
+<div class="pt-4 mt-4 border-t border-slate-200 dark:border-primary/10">
+<p class="px-4 text-[10px] uppercase tracking-widest text-slate-400 dark:text-primary/40 font-bold mb-2">Network</p>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-primary/10 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">apartment</span>
+<span class="font-medium">Venues</span>
+</a>
+</div>
+</nav>
+<div class="p-4 border-t border-slate-200 dark:border-primary/10">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-primary/10 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-medium">Settings</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col overflow-hidden bg-background-light dark:bg-background-dark">
+<!-- Header -->
+<header class="h-20 flex items-center justify-between px-8 bg-white dark:bg-background-dark border-b border-slate-200 dark:border-primary/10">
+<h2 class="text-2xl font-bold tracking-tight">Venue Directory</h2>
+<div class="flex items-center gap-4 flex-1 max-w-2xl px-8">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="w-full h-11 pl-12 pr-4 bg-slate-100 dark:bg-surface-elevated border-none rounded-xl focus:ring-2 focus:ring-primary text-sm placeholder-slate-400" placeholder="Search venues by name or location..." type="text"/>
+</div>
+<button class="flex items-center justify-center bg-slate-100 dark:bg-surface-elevated px-4 h-11 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</button>
+</div>
+<div class="flex items-center gap-3">
+<button class="p-2.5 rounded-xl bg-slate-100 dark:bg-surface-elevated text-slate-600 dark:text-slate-300 relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-primary rounded-full border-2 border-white dark:border-background-dark"></span>
+</button>
+<div class="size-10 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center overflow-hidden">
+<img alt="User" data-alt="User profile picture placeholder" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASz9oY4SrYaPaS5HLxq-c3A3MY4ZSIuwkG9NzCCrK6RvuaoNVwczgv_-SbeOulLOxXdFFcpJ9cMSoQsnqNGzcGYbXariZM1ZXazWACa8I8Huw811x-2xi4R4_m0OuuvMJDGfNHT4vqEEcH82qeBhYwLfh0Bk5UQsE7cND-JokNIS-_s8PDZ91L9u7rffIk1DARs6rW-_5-lC0XuukmL0qlNcGBQLCWq5Tuec8FnvTPzAhL0hnRpf5Si1S6Ydo28fakUGFi7V0isQ"/>
+</div>
+</div>
+</header>
+<!-- Grid Content -->
+<div class="flex-1 overflow-y-auto p-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Venue Card 1 -->
+<div class="bg-white dark:bg-surface-dark rounded-xl overflow-hidden group border border-transparent dark:hover:border-primary/30 transition-all shadow-sm hover:shadow-xl">
+<div class="aspect-[16/10] overflow-hidden relative">
+<img alt="The Soundstage" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Interior of a modern music concert hall with red lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQxk4v_8GsKn16RFhVL_FC6k9eXt5jYoGDhrXhdIeTtdct9kMNFyGw8SSPpk0fzCxoPM0uq968CxSJChdza-zjdFzm4gv47N9fAJlYpIuqG3RVRFAObuZgNCSCr48O5yKJA74ghUZ9F3_BvaX_gE_K7N3ac-EubGJN3kYeA7D_EM145QQYj_GM-q49ocpKb25LMTPTxC9623ZjqvAbtNDS8mQmfYPUm0f8wyMAwbUrvxWu4REAyXcUX_Ci5pFBE07JrsajWyVAdg"/>
+<div class="absolute top-4 right-4 bg-black/40 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold text-white uppercase tracking-widest border border-white/10">
+                                Premium Partner
+                            </div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="text-xl font-bold mb-1">The Soundstage</h3>
+<p class="text-slate-500 dark:text-primary/60 text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                                        London, UK
+                                    </p>
+</div>
+<div class="bg-primary/10 px-3 py-2 rounded-lg text-center">
+<p class="text-[10px] uppercase tracking-tighter text-primary font-bold">Capacity</p>
+<p class="mono-text text-primary text-sm font-bold">1,200</p>
+</div>
+</div>
+<div class="flex gap-3 mt-6">
+<button class="flex-1 bg-primary hover:bg-primary/90 text-white font-semibold py-2.5 rounded-lg text-sm transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                                    Request Hold
+                                </button>
+<button class="px-4 py-2.5 rounded-lg border border-slate-200 dark:border-primary/20 hover:bg-slate-50 dark:hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400">info</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Venue Card 2 -->
+<div class="bg-white dark:bg-surface-dark rounded-xl overflow-hidden group border border-transparent dark:hover:border-primary/30 transition-all shadow-sm hover:shadow-xl">
+<div class="aspect-[16/10] overflow-hidden relative">
+<img alt="Electric Ballroom" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Crowded concert venue with blue stage lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAE4Dbqkxha4cpk9x4ENSdnIGRudj_H3ly1sTMRnjBzy1-4QDt0jhMsnh6NGsxSP4XtdaAe2hj_OTuZ8dPePd8Yj3ZTn1gnBpbEu0a3bSvSzH8SISIC0_FYL0CTJWTWoPV40mfW6Mek8w3AsrFb1ordhQF96c2yO4I9CPQS2DimHYSprMc_qmHjN3O6xB-0NZFUKUsBlSzkIhPKUAPXjXLkm2HEIaWBfb0lx5iJX95j5Yva1btiILLfJgcFwN6h5z1Z5N1DDUcMuw"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="text-xl font-bold mb-1">Electric Ballroom</h3>
+<p class="text-slate-500 dark:text-primary/60 text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                                        Berlin, DE
+                                    </p>
+</div>
+<div class="bg-primary/10 px-3 py-2 rounded-lg text-center">
+<p class="text-[10px] uppercase tracking-tighter text-primary font-bold">Capacity</p>
+<p class="mono-text text-primary text-sm font-bold">800</p>
+</div>
+</div>
+<div class="flex gap-3 mt-6">
+<button class="flex-1 bg-primary hover:bg-primary/90 text-white font-semibold py-2.5 rounded-lg text-sm transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                                    Request Hold
+                                </button>
+<button class="px-4 py-2.5 rounded-lg border border-slate-200 dark:border-primary/20 hover:bg-slate-50 dark:hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400">info</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Venue Card 3 -->
+<div class="bg-white dark:bg-surface-dark rounded-xl overflow-hidden group border border-transparent dark:hover:border-primary/30 transition-all shadow-sm hover:shadow-xl">
+<div class="aspect-[16/10] overflow-hidden relative">
+<img alt="Neon Garage" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Gritty industrial concert venue with neon signs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpulxo4cZzYDM-1vd_xizwS7u7iKvd7sF6pjsnrCEnh7QL6lVHg-_AtVfu1kKRecmgYhu-LZjrJK3CGl2DfK4jtry687cNZ47Nnp4-DwDfkdPJ8_aLFohSrJ3YapYN9E5T6tsgs-XDpZMzQDL7rWIVVlDDQDiFJK0jNFQ7l5UMnnXKRhwtE5NZZ5RvxnGWes1e2Rik_khN-gw6-Mq0Fkty5LrZPvMQGWyGj6k_mutlXv1y7PxavpCjaf-SSeGlPLhBJZpoTTISBw"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="text-xl font-bold mb-1">Neon Garage</h3>
+<p class="text-slate-500 dark:text-primary/60 text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                                        Austin, US
+                                    </p>
+</div>
+<div class="bg-primary/10 px-3 py-2 rounded-lg text-center">
+<p class="text-[10px] uppercase tracking-tighter text-primary font-bold">Capacity</p>
+<p class="mono-text text-primary text-sm font-bold">450</p>
+</div>
+</div>
+<div class="flex gap-3 mt-6">
+<button class="flex-1 bg-primary hover:bg-primary/90 text-white font-semibold py-2.5 rounded-lg text-sm transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                                    Request Hold
+                                </button>
+<button class="px-4 py-2.5 rounded-lg border border-slate-200 dark:border-primary/20 hover:bg-slate-50 dark:hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400">info</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Venue Card 4 -->
+<div class="bg-white dark:bg-surface-dark rounded-xl overflow-hidden group border border-transparent dark:hover:border-primary/30 transition-all shadow-sm hover:shadow-xl">
+<div class="aspect-[16/10] overflow-hidden relative">
+<img alt="Echo Hall" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Modern geometric concert hall with warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCmzB-ZW51Gk3Yh3xHCBNm8x7zAqLv9L-PKp6Lu1z8qwgMXyyAZ-9sopFL9Rxsp8VxyLq9_duRd3iBhU6n3NKBcYKHagiCD-GDoTca_rjWR4uVVLiIgJA5IPAkgz-NqjNgjbrrTqKdWlVx5ZczW2pX7UpdNL0aAE5vxj1t307oePWlC0rEjstfImayrW1LWklui15O_7HX4HfDoj_9b-Cxark2_I0s_o7ZBcAwX8t-ChgIO5u_-94eH-5saY8LIRWM4s0SDe-R2w"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="text-xl font-bold mb-1">Echo Hall</h3>
+<p class="text-slate-500 dark:text-primary/60 text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                                        Tokyo, JP
+                                    </p>
+</div>
+<div class="bg-primary/10 px-3 py-2 rounded-lg text-center">
+<p class="text-[10px] uppercase tracking-tighter text-primary font-bold">Capacity</p>
+<p class="mono-text text-primary text-sm font-bold">1,500</p>
+</div>
+</div>
+<div class="flex gap-3 mt-6">
+<button class="flex-1 bg-primary hover:bg-primary/90 text-white font-semibold py-2.5 rounded-lg text-sm transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                                    Request Hold
+                                </button>
+<button class="px-4 py-2.5 rounded-lg border border-slate-200 dark:border-primary/20 hover:bg-slate-50 dark:hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400">info</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Venue Card 5 -->
+<div class="bg-white dark:bg-surface-dark rounded-xl overflow-hidden group border border-transparent dark:hover:border-primary/30 transition-all shadow-sm hover:shadow-xl">
+<div class="aspect-[16/10] overflow-hidden relative">
+<img alt="Basement Beats" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Intimate underground club with purple ambient lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVSgwNKgxMOGH4jly5ktiXmoYudPKKEOs6yaMb4JFlokS2XbXFDSm9sE4wH0ctBg9y1qPBh9c673CAhm0oCu07Bb5OmjSJoPWsk93zpGE5suw1SfRVxDJiiWwy0yi53eSNEs9qKuFO1QCuvG-he0yiLC0TJKF9jU5vkdnGYHDtMg4PJzap5WgrTbZcOOjW8zZ6r9kRvcifegShktU33boNkTgveq6KTXo5tBJO4cyZHAPe6ZwIzxBATVbr1f5tCESvXfHJru2VDg"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="text-xl font-bold mb-1">Basement Beats</h3>
+<p class="text-slate-500 dark:text-primary/60 text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                                        Paris, FR
+                                    </p>
+</div>
+<div class="bg-primary/10 px-3 py-2 rounded-lg text-center">
+<p class="text-[10px] uppercase tracking-tighter text-primary font-bold">Capacity</p>
+<p class="mono-text text-primary text-sm font-bold">300</p>
+</div>
+</div>
+<div class="flex gap-3 mt-6">
+<button class="flex-1 bg-primary hover:bg-primary/90 text-white font-semibold py-2.5 rounded-lg text-sm transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                                    Request Hold
+                                </button>
+<button class="px-4 py-2.5 rounded-lg border border-slate-200 dark:border-primary/20 hover:bg-slate-50 dark:hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400">info</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Venue Card 6 -->
+<div class="bg-white dark:bg-surface-dark rounded-xl overflow-hidden group border border-transparent dark:hover:border-primary/30 transition-all shadow-sm hover:shadow-xl">
+<div class="aspect-[16/10] overflow-hidden relative">
+<img alt="The Grand Arena" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Large stadium concert arena with massive stage setup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBM4wy887nEbgFIbXoTTmXFySzSm5QcTdGH03Vn8R8uYpJUvcJ6hW_sCPbEnTx1Au3EaeVAr98k0-mcLw-jkdUyYyeY4p0ERRP2wvyyjN3_3_ADYngsUgfpXpkgbmpx-kb3hXar07XIZpYeGEmuVJ7_YMUkZAIjTzYre2SSAdLaZ2DGPI0KkUC2stpGAUHIGfTSGlhV8Q1TpRSxUuI2tmw08n69PjUf8TVMHIV1fhd3YJSoNmk0WLan3jItFQu0RlWrFVyKx9UXgA"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="text-xl font-bold mb-1">The Grand Arena</h3>
+<p class="text-slate-500 dark:text-primary/60 text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                                        New York, US
+                                    </p>
+</div>
+<div class="bg-primary/10 px-3 py-2 rounded-lg text-center">
+<p class="text-[10px] uppercase tracking-tighter text-primary font-bold">Capacity</p>
+<p class="mono-text text-primary text-sm font-bold">5,000</p>
+</div>
+</div>
+<div class="flex gap-3 mt-6">
+<button class="flex-1 bg-primary hover:bg-primary/90 text-white font-semibold py-2.5 rounded-lg text-sm transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                                    Request Hold
+                                </button>
+<button class="px-4 py-2.5 rounded-lg border border-slate-200 dark:border-primary/20 hover:bg-slate-50 dark:hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400">info</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Stats -->
+<footer class="px-8 py-4 bg-white dark:bg-background-dark border-t border-slate-200 dark:border-primary/10 flex items-center justify-between text-xs font-medium text-slate-400">
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2">
+<span class="size-2 bg-green-500 rounded-full animate-pulse"></span>
+<span>API Status: Normal</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px]">database</span>
+<span>1,429 venues listed</span>
+</div>
+</div>
+<div>
+                    © 2024 SoundGrid Pro Platform
+                </div>
+</footer>
+</main>
+</div>
+</body></html>

@@ -3,13 +3,13 @@
 ## v1 Requirements
 
 ### Authentication & Identity
-- [ ] **AUTH-01**: Multi-persona sign-up workflow (Artist, Producer, Supervisor, Venue, Manager).
-- [ ] **AUTH-02**: Integrated Identity Verification via Stripe Identity for any payout recipient.
-- [ ] **AUTH-03**: OAuth Integration (Google, Apple) for frictionless professional onboarding.
-- [ ] **AUTH-04**: Role-Based Access Control (RBAC) ensuring data isolation between roles.
+- [x] **AUTH-01**: Multi-persona sign-up workflow (Artist, Producer, Supervisor, Venue, Manager).
+- [x] **AUTH-02**: Integrated Identity Verification via Stripe Identity for any payout recipient.
+- [x] **AUTH-03**: OAuth Integration (Google, Apple) for frictionless professional onboarding.
+- [x] **AUTH-04**: Role-Based Access Control (RBAC) ensuring data isolation between roles.
 
 ### ContractGrid (Legal & Escrow)
-- [ ] **CONT-01**: Guided Contract Wizard for Producer Agreements, Split Sheets, and Performance Contracts.
+- [x] **CONT-01**: Guided Contract Wizard for Producer Agreements, Split Sheets, and Performance Contracts.
 - [ ] **CONT-02**: Integrated Multi-party E-Signature via DocuSign REST API.
 - [ ] **CONT-03**: Milestone-based Escrow Engine using Stripe Treasury to secure funds.
 - [ ] **CONT-04**: Distribution Gate: Programmatic release of ISRC/ISWC codes only after contract execution.
@@ -42,11 +42,11 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| AUTH-01 | Phase 1 | Pending |
-| AUTH-02 | Phase 1 | Pending |
-| AUTH-03 | Phase 1 | Pending |
-| AUTH-04 | Phase 1 | Pending |
-| CONT-01 | Phase 2 | Pending |
+| AUTH-01 | Phase 1 | Complete |
+| AUTH-02 | Phase 1 | Complete |
+| AUTH-03 | Phase 1 | Complete |
+| AUTH-04 | Phase 1 | Complete |
+| CONT-01 | Phase 2 | Complete |
 | CONT-02 | Phase 2 | Pending |
 | CONT-03 | Phase 3 | Pending |
 | CONT-04 | Phase 4 | Pending |

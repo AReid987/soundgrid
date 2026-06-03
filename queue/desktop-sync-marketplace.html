@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SoundGrid Desktop Sync Marketplace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6c63ff",
+                        "background-light": "#f5f5f8",
+                        "background-dark": "#0f0f13",
+                        "surface-dark": "#1a1a24",
+                        "surface-elevated": "#242434",
+                        "teal-mint": "#00d4aa",
+                        "coral-warning": "#ff6b6b"
+                    },
+                    fontFamily: {
+                        "display": ["Outfit", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Outfit', sans-serif; }
+        .mono-text { font-family: 'JetBrains Mono', monospace; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased overflow-hidden">
+<div class="flex h-screen w-full">
+<!-- Sidebar -->
+<aside class="w-64 flex flex-col border-r border-slate-200 dark:border-primary/10 bg-background-light dark:bg-background-dark">
+<div class="p-6 flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined">grid_view</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100">SoundGrid</h1>
+</div>
+<nav class="flex-1 px-4 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary rounded-xl transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary rounded-xl transition-colors" href="#">
+<span class="material-symbols-outlined">library_music</span>
+<span class="font-medium">Library</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-primary/10 text-primary rounded-xl transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">sync</span>
+<span class="font-medium">Sync Marketplace</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary rounded-xl transition-colors" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-medium">Collabs</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary rounded-xl transition-colors" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-medium">Revenue</span>
+</a>
+</nav>
+<div class="p-4 mt-auto">
+<div class="flex items-center gap-3 p-3 rounded-xl bg-slate-100 dark:bg-surface-dark border border-slate-200 dark:border-primary/5">
+<div class="w-10 h-10 rounded-full bg-cover bg-center border border-primary/20" data-alt="User profile avatar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAyTt6oO8ouvhDpszQYNJDKqarjQSFw8jJqgThmxaTty-qBEbGDIGfFEZlSrzdttIFzFBVJzid_c_Vgns1E4UhYZtkt3uCW53XvCIpIvpFqwmtUij1pzSqmqQF-H0EvJ4SnRaWE_NOzP-di9BUpJ4nPe-yisoYpkyBM3rgOKbUTGIxaJXnE0WMzVSujdw055AhVaHB2sbNxgxHpCTbwivbz2HTWG9QXBEtUgxSNQAKRBrPmUHJ6X9Ris7LRm6mVpPB3F2-DgePvUA')"></div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold">Alex Rivera</span>
+<span class="text-xs text-slate-500 dark:text-slate-400 font-mono italic">PRO Plan</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col overflow-hidden">
+<!-- Header -->
+<header class="h-16 flex items-center justify-between px-8 border-b border-slate-200 dark:border-primary/10 bg-white dark:bg-background-dark/50 backdrop-blur-md sticky top-0 z-10">
+<div class="flex items-center gap-4">
+<h2 class="text-lg font-bold">Marketplace Briefs</h2>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-primary/20 text-primary uppercase tracking-widest">Live</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+<input class="pl-10 pr-4 py-2 bg-slate-100 dark:bg-surface-elevated border-none rounded-lg text-sm w-64 focus:ring-1 focus:ring-primary" placeholder="Search briefs..." type="text"/>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-slate-100 dark:bg-surface-elevated text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-slate-100 dark:bg-surface-elevated text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</header>
+<!-- Filters Area -->
+<div class="px-8 py-4 flex flex-wrap gap-3 bg-slate-50 dark:bg-background-dark border-b border-slate-200 dark:border-primary/5">
+<button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-surface-elevated border border-slate-200 dark:border-primary/10 rounded-lg text-sm font-medium">
+                    Genre <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-surface-elevated border border-slate-200 dark:border-primary/10 rounded-lg text-sm font-medium">
+                    Mood <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-surface-elevated border border-slate-200 dark:border-primary/10 rounded-lg text-sm font-medium">
+                    Budget <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-surface-elevated border border-slate-200 dark:border-primary/10 rounded-lg text-sm font-medium">
+                    Duration <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<div class="ml-auto flex items-center gap-2 text-xs text-slate-400 font-mono">
+<span class="material-symbols-outlined text-xs">filter_list</span>
+<span>142 BRIEFS FOUND</span>
+</div>
+</div>
+<!-- Grid Content -->
+<div class="flex-1 overflow-y-auto p-8 bg-background-light dark:bg-background-dark">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="group flex flex-col bg-white dark:bg-surface-dark rounded-xl border border-slate-200 dark:border-primary/10 overflow-hidden hover:border-primary/40 transition-all duration-300 shadow-sm hover:shadow-xl">
+<div class="h-40 bg-cover bg-center relative" data-alt="Abstract dark synth neon waves" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDg1mFWSVY0xb4_cNzFwQeZ8dWJUnpZGqMatX_EL-oVJ4HhFUPIj9lvmCP6wB8B-OQGbluViUjxum-eDds3VgixGL3y41Q59Sx92r5TNkqOjrCcb7PACtybDIFTx9VoS7mrfrJnYUR2DXpyhGQ1MyxQ5xLvNC8E6s1qJGYT-Y0cqFF4_JO4yEEzgmoKwrC9skqfAwk4cvcGRzmKJy0_xBeVQpLIYuJDtryXUP1lHDLFbM1VlvgPWHhIAk5nkpkcnteSHg718dyusQ')">
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="px-2 py-1 bg-teal-mint text-background-dark text-[10px] font-bold rounded uppercase tracking-tighter mono-text leading-none flex items-center">Match 98%</span>
+<span class="px-2 py-1 bg-coral-warning text-white text-[10px] font-bold rounded uppercase tracking-tighter mono-text leading-none flex items-center">4h Left</span>
+</div>
+</div>
+<div class="p-5 flex-1 flex flex-col">
+<h3 class="text-lg font-bold mb-1 leading-tight group-hover:text-primary transition-colors">Netflix Trailer: Dark Synthpop</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm mb-4 line-clamp-2">Looking for aggressive yet cinematic synth textures. Think 80s dystopian meets modern cinematic weight.</p>
+<div class="mt-auto space-y-4">
+<div class="flex items-center justify-between p-3 rounded-lg bg-slate-50 dark:bg-surface-elevated">
+<div class="flex items-center gap-3">
+<button class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-sm">play_arrow</span>
+</button>
+<div class="flex flex-col">
+<span class="text-[10px] text-slate-400 uppercase tracking-widest font-bold">Ref Track</span>
+<span class="text-xs font-medium truncate w-24">Viper_Ref.mp3</span>
+</div>
+</div>
+<div class="w-24 h-4 flex items-center justify-center gap-0.5">
+<div class="w-1 h-2 bg-primary/40 rounded-full"></div>
+<div class="w-1 h-3 bg-primary/60 rounded-full"></div>
+<div class="w-1 h-4 bg-primary rounded-full"></div>
+<div class="w-1 h-2 bg-primary/40 rounded-full"></div>
+<div class="w-1 h-3 bg-primary/60 rounded-full"></div>
+<div class="w-1 h-4 bg-primary rounded-full"></div>
+</div>
+</div>
+<button class="w-full py-2.5 bg-primary text-white font-bold text-sm rounded-lg hover:bg-primary/90 transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary/20">
+                                    Submit Pitch <span class="material-symbols-outlined text-sm">send</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group flex flex-col bg-white dark:bg-surface-dark rounded-xl border border-slate-200 dark:border-primary/10 overflow-hidden hover:border-primary/40 transition-all duration-300 shadow-sm hover:shadow-xl">
+<div class="h-40 bg-cover bg-center relative" data-alt="Orchestral concert hall abstract" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCacr9Vy04-VElHrjV3JbdIyuTbSWmVTAOgkmSW2-TisRtJgcTPfg3lvyRVC300gcHcsI9yDOw6PD0OFckWZKN0iXl2i6tBcPM6p2IrAjFBL4Fja5d5Da34EJIt8no66HLRh4zRHIVapHnItIVhImfFprey1N2nIjmNw-K99_58O2UFaa4MjshqmP3bQ1ylH3FyQD8WeaGHmLdIoKzt85Mn6r_qDIqg76a4QbPwfGe1kwzaGtLd7UQCkawb_UKNGFY0ivTs4AqFEg')">
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="px-2 py-1 bg-teal-mint text-background-dark text-[10px] font-bold rounded uppercase tracking-tighter mono-text leading-none flex items-center">Match 85%</span>
+<span class="px-2 py-1 bg-slate-200 dark:bg-surface-elevated text-slate-600 dark:text-slate-300 text-[10px] font-bold rounded uppercase tracking-tighter mono-text leading-none flex items-center">12h Left</span>
+</div>
+</div>
+<div class="p-5 flex-1 flex flex-col">
+<h3 class="text-lg font-bold mb-1 leading-tight group-hover:text-primary transition-colors">HBO Drama: Orchestral</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm mb-4 line-clamp-2">Sweeping strings and emotive piano for high-stakes dramatic finale. Needs emotional depth and climax.</p>
+<div class="mt-auto space-y-4">
+<div class="flex items-center justify-between p-3 rounded-lg bg-slate-50 dark:bg-surface-elevated">
+<div class="flex items-center gap-3">
+<button class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-sm">play_arrow</span>
+</button>
+<div class="flex flex-col">
+<span class="text-[10px] text-slate-400 uppercase tracking-widest font-bold">Ref Track</span>
+<span class="text-xs font-medium truncate w-24">Estate_Piano.wav</span>
+</div>
+</div>
+<div class="w-24 h-4 flex items-center justify-center gap-0.5 opacity-50">
+<div class="w-1 h-3 bg-primary/40 rounded-full"></div>
+<div class="w-1 h-4 bg-primary/60 rounded-full"></div>
+<div class="w-1 h-2 bg-primary rounded-full"></div>
+<div class="w-1 h-4 bg-primary/40 rounded-full"></div>
+<div class="w-1 h-3 bg-primary/60 rounded-full"></div>
+</div>
+</div>
+<button class="w-full py-2.5 bg-primary text-white font-bold text-sm rounded-lg hover:bg-primary/90 transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary/20">
+                                    Submit Pitch <span class="material-symbols-outlined text-sm">send</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group flex flex-col bg-white dark:bg-surface-dark rounded-xl border border-slate-200 dark:border-primary/10 overflow-hidden hover:border-primary/40 transition-all duration-300 shadow-sm hover:shadow-xl">
+<div class="h-40 bg-cover bg-center relative" data-alt="Cyberpunk tech neon circuitry" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBsHfB5g_19I88mkT7Jdlu-h6twqNZrVBzhjm1QO5B4f6CNAGhErcHIz1dNO5g40vUdil7STpEkst1VuRvBVt8_heAmlS16CvbSKgSbnXiw2ADXm_Is3v4gztLOCjil2m_-QHyVEhfpxptQMl1UF-ghCE92jZWbEzcvAzUKGToPTF3J38p_wyswNn59fHIu9bbTf35wf_520vLiDUDP5_K7fj-zPQDk4FYwyTVXrs6Pgm3fyM3s9ijEYb2b5AAFhKKzYSSlZ6pW4A')">
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="px-2 py-1 bg-teal-mint text-background-dark text-[10px] font-bold rounded uppercase tracking-tighter mono-text leading-none flex items-center">Match 92%</span>
+<span class="px-2 py-1 bg-slate-200 dark:bg-surface-elevated text-slate-600 dark:text-slate-300 text-[10px] font-bold rounded uppercase tracking-tighter mono-text leading-none flex items-center">2d Left</span>
+</div>
+</div>
+<div class="p-5 flex-1 flex flex-col">
+<h3 class="text-lg font-bold mb-1 leading-tight group-hover:text-primary transition-colors">Gaming Ad: Cyberpunk</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm mb-4 line-clamp-2">High-energy electronic beats for next-gen hardware branding. Glitchy, industrial, and fast.</p>
+<div class="mt-auto space-y-4">
+<div class="flex items-center justify-between p-3 rounded-lg bg-slate-50 dark:bg-surface-elevated">
+<div class="flex items-center gap-3">
+<button class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-sm">play_arrow</span>
+</button>
+<div class="flex flex-col">
+<span class="text-[10px] text-slate-400 uppercase tracking-widest font-bold">Ref Track</span>
+<span class="text-xs font-medium truncate w-24">Glitched_Core.mp3</span>
+</div>
+</div>
+<div class="w-24 h-4 flex items-center justify-center gap-0.5 opacity-50">
+<div class="w-1 h-4 bg-primary rounded-full"></div>
+<div class="w-1 h-3 bg-primary rounded-full"></div>
+<div class="w-1 h-2 bg-primary rounded-full"></div>
+<div class="w-1 h-4 bg-primary rounded-full"></div>
+</div>
+</div>
+<button class="w-full py-2.5 bg-primary text-white font-bold text-sm rounded-lg hover:bg-primary/90 transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary/20">
+                                    Submit Pitch <span class="material-symbols-outlined text-sm">send</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group flex flex-col bg-white dark:bg-surface-dark rounded-xl border border-slate-200 dark:border-primary/10 overflow-hidden hover:border-primary/40 transition-all duration-300 shadow-sm hover:shadow-xl">
+<div class="h-40 bg-cover bg-center relative" data-alt="Acoustic guitar in soft light" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDSMH3ZyWftyTekSYnp93gK9TXH9NYMULhgL4eKAaIui79M-PqlQV-Jctwxu7cpw1DL6ZMotx-22CwpWDJzYOicbgwLNAeJkfWyaUS3MZ2LXshdW9Zcyo5ILPnMCkpl78PM7jYl4z222EGJiuVE5ljhPlcljPAA3qD3oHiqHJSAV6CRR0k_ZWQ-kGUKQTKkXcu5Xh9lt7StnZfFHIjw0XJ9W_D_10oroF8KwgHfdWSB2wJHynlJsa_5IGtdZnUZhigRXAXhNXjM6A')">
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="px-2 py-1 bg-teal-mint text-background-dark text-[10px] font-bold rounded uppercase tracking-tighter mono-text leading-none flex items-center">Match 78%</span>
+<span class="px-2 py-1 bg-slate-200 dark:bg-surface-elevated text-slate-600 dark:text-slate-300 text-[10px] font-bold rounded uppercase tracking-tighter mono-text leading-none flex items-center">5d Left</span>
+</div>
+</div>
+<div class="p-5 flex-1 flex flex-col">
+<h3 class="text-lg font-bold mb-1 leading-tight group-hover:text-primary transition-colors">Indie Film: Acoustic</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm mb-4 line-clamp-2">Intimate vocal and guitar for character study. Vulnerable, raw, and minimalist production.</p>
+<div class="mt-auto space-y-4">
+<div class="flex items-center justify-between p-3 rounded-lg bg-slate-50 dark:bg-surface-elevated">
+<div class="flex items-center gap-3">
+<button class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-sm">play_arrow</span>
+</button>
+<div class="flex flex-col">
+<span class="text-[10px] text-slate-400 uppercase tracking-widest font-bold">Ref Track</span>
+<span class="text-xs font-medium truncate w-24">Morning_Sun.wav</span>
+</div>
+</div>
+<div class="w-24 h-4 flex items-center justify-center gap-0.5 opacity-30">
+<div class="w-1 h-2 bg-primary rounded-full"></div>
+<div class="w-1 h-2 bg-primary rounded-full"></div>
+<div class="w-1 h-2 bg-primary rounded-full"></div>
+</div>
+</div>
+<button class="w-full py-2.5 bg-primary text-white font-bold text-sm rounded-lg hover:bg-primary/90 transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary/20">
+                                    Submit Pitch <span class="material-symbols-outlined text-sm">send</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="group flex flex-col bg-white dark:bg-surface-dark rounded-xl border border-slate-200 dark:border-primary/10 overflow-hidden hover:border-primary/40 transition-all duration-300 shadow-sm hover:shadow-xl">
+<div class="h-40 bg-cover bg-center relative" data-alt="Minimalist product design aesthetic" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCScthfepT_3BS-A3ni8Gq6oDb12AmopdseL8fAKAedllXmUkhPk4QKE3qX0TplaPVLD5dAVD-2__28FtvyS7fnYU_2iWZW_bMXREG_PjdfgNng9QsrLfjykwUUdvCOX6k9CsdXiz5VAweJSCyTQFdMNvLX8aelDKI6sqk_0d-iWfxkWDz-EAT0PPYxGzfjBK-MxWl7rZ6MC7ei4na2vAXEb9lPc_Z03Dkoq6Qik2kV5EXjTB1erEaYjkaUssM7FQAXOmACrBrbIA')">
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="px-2 py-1 bg-teal-mint text-background-dark text-[10px] font-bold rounded uppercase tracking-tighter mono-text leading-none flex items-center">Match 95%</span>
+<span class="px-2 py-1 bg-coral-warning text-white text-[10px] font-bold rounded uppercase tracking-tighter mono-text leading-none flex items-center">1d Left</span>
+</div>
+</div>
+<div class="p-5 flex-1 flex flex-col">
+<h3 class="text-lg font-bold mb-1 leading-tight group-hover:text-primary transition-colors">Apple Commercial: Upbeat</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm mb-4 line-clamp-2">Minimalist and clean sound for product launch. Percussive, airy, and sophisticated.</p>
+<div class="mt-auto space-y-4">
+<div class="flex items-center justify-between p-3 rounded-lg bg-slate-50 dark:bg-surface-elevated">
+<div class="flex items-center gap-3">
+<button class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-sm">play_arrow</span>
+</button>
+<div class="flex flex-col">
+<span class="text-[10px] text-slate-400 uppercase tracking-widest font-bold">Ref Track</span>
+<span class="text-xs font-medium truncate w-24">White_Space.mp3</span>
+</div>
+</div>
+<div class="w-24 h-4 flex items-center justify-center gap-0.5 opacity-50">
+<div class="w-1 h-4 bg-primary/40 rounded-full"></div>
+<div class="w-1 h-2 bg-primary/60 rounded-full"></div>
+<div class="w-1 h-4 bg-primary rounded-full"></div>
+</div>
+</div>
+<button class="w-full py-2.5 bg-primary text-white font-bold text-sm rounded-lg hover:bg-primary/90 transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary/20">
+                                    Submit Pitch <span class="material-symbols-outlined text-sm">send</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="group flex flex-col bg-white dark:bg-surface-dark rounded-xl border border-slate-200 dark:border-primary/10 overflow-hidden hover:border-primary/40 transition-all duration-300 shadow-sm hover:shadow-xl">
+<div class="h-40 bg-cover bg-center relative" data-alt="Dark mysterious corridor abstract" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD7Bqv4tKq1oKjI1Y3FE9sG9zV8R913aKNnh7TkvhrgmxxVuiWqgd2K9e8nWzWWPM12f7eABJvDLBQvufaMFlX7HsBc19fMpM_JIAx5DiKPnfO47L6n0a5KlgfqMH4H-fUZInHHSaH_T6k6Hwkfpnn3IIFTq3vUbK3AS8KERiEuiZFBAlSld0WLVTDktdZ1va68PGo-U7ITYH2P026bfo-1Pf0G7aP9TKXg24iMzJlwz829-SFl3Q802Ey_jEsxYgY8UurdXe0mGA')">
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="px-2 py-1 bg-teal-mint text-background-dark text-[10px] font-bold rounded uppercase tracking-tighter mono-text leading-none flex items-center">Match 88%</span>
+<span class="px-2 py-1 bg-slate-200 dark:bg-surface-elevated text-slate-600 dark:text-slate-300 text-[10px] font-bold rounded uppercase tracking-tighter mono-text leading-none flex items-center">3d Left</span>
+</div>
+</div>
+<div class="p-5 flex-1 flex flex-col">
+<h3 class="text-lg font-bold mb-1 leading-tight group-hover:text-primary transition-colors">Thriller: Suspenseful</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm mb-4 line-clamp-2">Low-frequency drones and sharp percussive hits. Tension-building atmosphere for crime thriller.</p>
+<div class="mt-auto space-y-4">
+<div class="flex items-center justify-between p-3 rounded-lg bg-slate-50 dark:bg-surface-elevated">
+<div class="flex items-center gap-3">
+<button class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-sm">play_arrow</span>
+</button>
+<div class="flex flex-col">
+<span class="text-[10px] text-slate-400 uppercase tracking-widest font-bold">Ref Track</span>
+<span class="text-xs font-medium truncate w-24">Dark_Drone.wav</span>
+</div>
+</div>
+<div class="w-24 h-4 flex items-center justify-center gap-0.5 opacity-50">
+<div class="w-1 h-3 bg-primary rounded-full"></div>
+<div class="w-1 h-4 bg-primary rounded-full"></div>
+<div class="w-1 h-1 bg-primary rounded-full"></div>
+</div>
+</div>
+<button class="w-full py-2.5 bg-primary text-white font-bold text-sm rounded-lg hover:bg-primary/90 transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary/20">
+                                    Submit Pitch <span class="material-symbols-outlined text-sm">send</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

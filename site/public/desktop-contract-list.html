@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Outfit:wght@600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ff61ff", // Using the theme primary
+                        "electric-indigo": "#6C63FF",
+                        "teal-mint": "#00D4AA",
+                        "coral-red": "#FF6B6B",
+                        "elevated-surface": "#242434",
+                        "dark-surface": "#1A1A24",
+                        "near-black": "#0F0F13",
+                        "background-light": "#f8f5f8",
+                        "background-dark": "#0F0F13",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "outfit": ["Outfit", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>SoundGrid Desktop Contract List View</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased overflow-x-hidden">
+<div class="flex h-screen w-full overflow-hidden">
+<!-- SideNavBar -->
+<aside class="w-64 flex-shrink-0 bg-dark-surface border-r border-white/5 flex flex-col justify-between p-4">
+<div class="flex flex-col gap-8">
+<div class="flex items-center gap-3 px-2">
+<div class="bg-primary size-8 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-near-black font-bold">grid_view</span>
+</div>
+<div class="flex flex-col">
+<h1 class="font-outfit text-lg font-bold leading-none">SoundGrid</h1>
+<p class="text-xs text-slate-400">Industry Platform</p>
+</div>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:bg-white/5 transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary border border-primary/20" href="#">
+<span class="material-symbols-outlined text-primary">description</span>
+<span class="text-sm font-medium">Contracts</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:bg-white/5 transition-colors" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-sm font-medium">Artists</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:bg-white/5 transition-colors" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="text-sm font-medium">Royalties</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:bg-white/5 transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</nav>
+</div>
+<div class="p-2 bg-near-black rounded-xl border border-white/5">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-primary/20 flex items-center justify-center overflow-hidden border border-primary/40">
+<img class="w-full h-full object-cover" data-alt="User profile avatar with pink accent" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt7LtFvZywSCWh0wcjqqQyBdWW02H7LLvX9J4fiO5Qq-aKHJFLMbaWpXNaZzHwfcGpne_mMeUH64K2OmR2BXYYQdnG_uSH-yg92wZfZEnhPkWVX6D1n2WWBcxQpVRVDtXAxL4g0zTbVBBLxgdWb6qxCo9bNZRiXuQWhY5vi6KCqoahTlxe58VQCmnSTmpNuRO66gawfEwI4qKr_jYdCjSHheof_5r8kvAK6yVsMNaNxyyFsNiA56TfjCkuZJ5ekc59XEcispBQow"/>
+</div>
+<div class="flex flex-col">
+<p class="text-sm font-semibold">Alex Rivera</p>
+<p class="text-xs text-slate-500">Label Manager</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col h-full bg-near-black">
+<!-- Header / Top Bar -->
+<header class="flex items-center justify-between px-8 py-4 bg-near-black border-b border-white/5">
+<div class="flex items-center gap-6 flex-1">
+<h2 class="font-outfit text-2xl font-bold tracking-tight">Contracts</h2>
+<div class="flex items-center gap-3 flex-1 max-w-xl">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-xl">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-elevated-surface border-none rounded-lg text-sm text-slate-200 focus:ring-2 focus:ring-primary placeholder:text-slate-500" placeholder="Search contracts, parties, or ISRC codes..." type="text"/>
+</div>
+<button class="flex items-center gap-2 px-4 py-2 bg-elevated-surface rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-700/50 transition-colors">
+<span class="material-symbols-outlined text-lg">filter_list</span>
+                            Filter
+                        </button>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 bg-electric-indigo text-white px-5 py-2.5 rounded-lg font-bold text-sm tracking-wide shadow-lg shadow-electric-indigo/20 hover:brightness-110 transition-all">
+<span class="material-symbols-outlined text-lg">add</span>
+                        New Contract
+                    </button>
+</div>
+</header>
+<!-- Table Container -->
+<div class="flex-1 overflow-auto px-8 py-6">
+<div class="min-w-full inline-block align-middle">
+<table class="min-w-full border-separate border-spacing-y-2">
+<thead>
+<tr class="text-slate-500 text-xs font-semibold uppercase tracking-wider">
+<th class="px-4 py-2 text-left">Contract Title</th>
+<th class="px-4 py-2 text-left">Parties</th>
+<th class="px-4 py-2 text-left">Date</th>
+<th class="px-4 py-2 text-left">Status</th>
+<th class="px-4 py-2 text-left">ISRC Code</th>
+<th class="px-4 py-2 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="text-sm">
+<!-- Row 1 -->
+<tr class="bg-dark-surface border border-white/5 rounded-lg overflow-hidden group hover:ring-1 hover:ring-primary/40 transition-all">
+<td class="px-4 py-4 rounded-l-lg border-y border-l border-white/5">
+<div class="flex flex-col">
+<span class="font-semibold text-slate-100">Master Sync License</span>
+<span class="text-xs text-slate-500">Sync &amp; Broadcast</span>
+</div>
+</td>
+<td class="px-4 py-4 border-y border-white/5">
+<span class="text-slate-300 font-medium">Atlantic Records | John Doe</span>
+</td>
+<td class="px-4 py-4 border-y border-white/5">
+<span class="text-slate-400">Oct 24, 2023</span>
+</td>
+<td class="px-4 py-4 border-y border-white/5">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-teal-mint/10 text-teal-mint border border-teal-mint/20">
+                                        Signed
+                                    </span>
+</td>
+<td class="px-4 py-4 border-y border-white/5">
+<span class="font-mono text-[11px] text-slate-500 bg-near-black/50 px-2 py-1 rounded">US-S1Z-23-00001</span>
+</td>
+<td class="px-4 py-4 rounded-r-lg border-y border-r border-white/5 text-right">
+<button class="text-slate-500 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="bg-dark-surface border border-white/5 rounded-lg overflow-hidden group hover:ring-1 hover:ring-primary/40 transition-all">
+<td class="px-4 py-4 rounded-l-lg border-y border-l border-white/5">
+<div class="flex flex-col">
+<span class="font-semibold text-slate-100">Distribution Agreement</span>
+<span class="text-xs text-slate-500">Digital Streaming</span>
+</div>
+</td>
+<td class="px-4 py-4 border-y border-white/5">
+<span class="text-slate-300 font-medium">SoundCloud | Jane Smith</span>
+</td>
+<td class="px-4 py-4 border-y border-white/5">
+<span class="text-slate-400">Oct 22, 2023</span>
+</td>
+<td class="px-4 py-4 border-y border-white/5">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-coral-red/10 text-coral-red border border-coral-red/20">
+                                        Pending Signature
+                                    </span>
+</td>
+<td class="px-4 py-4 border-y border-white/5">
+<span class="font-mono text-[11px] text-slate-500 bg-near-black/50 px-2 py-1 rounded">US-S1Z-23-00002</span>
+</td>
+<td class="px-4 py-4 rounded-r-lg border-y border-r border-white/5 text-right">
+<button class="text-slate-500 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="bg-dark-surface border border-white/5 rounded-lg overflow-hidden group hover:ring-1 hover:ring-primary/40 transition-all">
+<td class="px-4 py-4 rounded-l-lg border-y border-l border-white/5">
+<div class="flex flex-col">
+<span class="font-semibold text-slate-100">Mechanical License</span>
+<span class="text-xs text-slate-500">Reproduction Rights</span>
+</div>
+</td>
+<td class="px-4 py-4 border-y border-white/5">
+<span class="text-slate-300 font-medium">Warner Music | Bob Ross</span>
+</td>
+<td class="px-4 py-4 border-y border-white/5">
+<span class="text-slate-400">Oct 20, 2023</span>
+</td>
+<td class="px-4 py-4 border-y border-white/5">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-teal-mint/10 text-teal-mint border border-teal-mint/20">
+                                        Signed
+                                    </span>
+</td>
+<td class="px-4 py-4 border-y border-white/5">
+<span class="font-mono text-[11px] text-slate-500 bg-near-black/50 px-2 py-1 rounded">US-S1Z-23-00003</span>
+</td>
+<td class="px-4 py-4 rounded-r-lg border-y border-r border-white/5 text-right">
+<button class="text-slate-500 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="bg-dark-surface border border-white/5 rounded-lg overflow-hidden group hover:ring-1 hover:ring-primary/40 transition-all">
+<td class="px-4 py-4 rounded-l-lg border-y border-l border-white/5">
+<div class="flex flex-col">
+<span class="font-semibold text-slate-100">Artist Management</span>
+<span class="text-xs text-slate-500">Representation</span>
+</div>
+</td>
+<td class="px-4 py-4 border-y border-white/5">
+<span class="text-slate-300 font-medium">Universal | Alice Wong</span>
+</td>
+<td class="px-4 py-4 border-y border-white/5">
+<span class="text-slate-400">Oct 18, 2023</span>
+</td>
+<td class="px-4 py-4 border-y border-white/5">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-coral-red/10 text-coral-red border border-coral-red/20">
+                                        Pending Signature
+                                    </span>
+</td>
+<td class="px-4 py-4 border-y border-white/5">
+<span class="font-mono text-[11px] text-slate-500 bg-near-black/50 px-2 py-1 rounded">US-S1Z-23-00004</span>
+</td>
+<td class="px-4 py-4 rounded-r-lg border-y border-r border-white/5 text-right">
+<button class="text-slate-500 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="bg-dark-surface border border-white/5 rounded-lg overflow-hidden group hover:ring-1 hover:ring-primary/40 transition-all">
+<td class="px-4 py-4 rounded-l-lg border-y border-l border-white/5">
+<div class="flex flex-col">
+<span class="font-semibold text-slate-100">Merchandising Rights</span>
+<span class="text-xs text-slate-500">Brand License</span>
+</div>
+</td>
+<td class="px-4 py-4 border-y border-white/5">
+<span class="text-slate-300 font-medium">Sony Music | Sarah Lee</span>
+</td>
+<td class="px-4 py-4 border-y border-white/5">
+<span class="text-slate-400">Oct 15, 2023</span>
+</td>
+<td class="px-4 py-4 border-y border-white/5">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-teal-mint/10 text-teal-mint border border-teal-mint/20">
+                                        Signed
+                                    </span>
+</td>
+<td class="px-4 py-4 border-y border-white/5">
+<span class="font-mono text-[11px] text-slate-500 bg-near-black/50 px-2 py-1 rounded">US-S1Z-23-00005</span>
+</td>
+<td class="px-4 py-4 rounded-r-lg border-y border-r border-white/5 text-right">
+<button class="text-slate-500 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="mt-8 flex items-center justify-between">
+<p class="text-sm text-slate-500">Showing 5 of 124 contracts</p>
+<div class="flex gap-2">
+<button class="size-9 rounded-lg border border-white/10 flex items-center justify-center text-slate-400 hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined text-xl">chevron_left</span>
+</button>
+<button class="size-9 rounded-lg bg-primary text-near-black font-bold text-sm shadow-md">1</button>
+<button class="size-9 rounded-lg border border-white/10 flex items-center justify-center text-slate-400 hover:bg-white/5 transition-colors text-sm font-medium">2</button>
+<button class="size-9 rounded-lg border border-white/10 flex items-center justify-center text-slate-400 hover:bg-white/5 transition-colors text-sm font-medium">3</button>
+<span class="flex items-center justify-center text-slate-600 px-1">...</span>
+<button class="size-9 rounded-lg border border-white/10 flex items-center justify-center text-slate-400 hover:bg-white/5 transition-colors text-sm font-medium">12</button>
+<button class="size-9 rounded-lg border border-white/10 flex items-center justify-center text-slate-400 hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined text-xl">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

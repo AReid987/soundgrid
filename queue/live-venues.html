@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Outfit:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0df2b9",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#0F0F13",
+                        "surface-dark": "#1A1A24",
+                        "surface-elevated": "#242434",
+                        "accent-coral": "#ff6b6b"
+                    },
+                    fontFamily: {
+                        "display": ["Outfit", "sans-serif"],
+                        "body": ["Space Grotesk", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Space Grotesk', sans-serif; }
+        .font-outfit { font-family: 'Outfit', sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+    </style>
+<title>SoundGrid Venue Discovery</title>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Header Section -->
+<header class="sticky top-0 z-20 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-4 pt-6 pb-2">
+<div class="flex items-center justify-between mb-4">
+<h1 class="text-2xl font-display font-bold tracking-tight">Venue Discovery</h1>
+<div class="flex gap-2">
+<button class="p-2 rounded-full bg-surface-elevated text-slate-100">
+<span class="material-symbols-outlined text-2xl">notifications</span>
+</button>
+</div>
+</div>
+<!-- Search and Filter -->
+<div class="flex gap-3 mb-2">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="w-full h-12 pl-10 pr-4 rounded-xl border-none bg-surface-elevated text-slate-100 placeholder:text-slate-500 focus:ring-2 focus:ring-primary/50 text-sm font-body" placeholder="Search cities or venues" type="text"/>
+</div>
+<button class="h-12 px-4 rounded-xl bg-surface-elevated flex items-center gap-2 text-slate-100 hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined">tune</span>
+<span class="text-sm font-medium">Filters</span>
+</button>
+</div>
+<!-- Quick Filter Tags -->
+<div class="flex gap-2 overflow-x-auto pb-2 no-scrollbar">
+<button class="px-4 py-1.5 rounded-full bg-primary text-background-dark text-xs font-bold whitespace-nowrap">All Venues</button>
+<button class="px-4 py-1.5 rounded-full bg-surface-elevated text-slate-300 text-xs font-medium whitespace-nowrap border border-slate-700">Available Now</button>
+<button class="px-4 py-1.5 rounded-full bg-surface-elevated text-slate-300 text-xs font-medium whitespace-nowrap border border-slate-700">Top Rated</button>
+<button class="px-4 py-1.5 rounded-full bg-surface-elevated text-slate-300 text-xs font-medium whitespace-nowrap border border-slate-700">Touring Ready</button>
+</div>
+</header>
+<!-- Main Content: Venue List -->
+<main class="flex-1 px-4 py-2 space-y-4 mb-24">
+<!-- Venue Card 1 -->
+<div class="rounded-xl overflow-hidden bg-surface-dark border border-slate-800 shadow-xl">
+<div class="relative h-48 w-full bg-center bg-cover" data-alt="Modern concert venue interior with neon lighting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC8JbWGkWyaBxZqm-54t-p2CuonLpbs6H-YIE8FMLhjeWs7gpYkE0S4LZrqE6PwAhIJXZ2LzFxfFrLNuro2ET2B_Dta0PZL7uJI-f2T3TLy6V6Jq05Lz3yQCPM53UrHI2Uc13ppzvzCr3h8YOnp1zgmvrjw6dokVZIYaoqwxkuhfbizWmfFNaCNgq6EQE3t-NPpBx1X1rAPSCII_Kf9I236gIx1lBFtLOnZsnnAyw7NQwPE9_p7ofVG1zHNfjz9Sz9WiDAuJxx3TQ')">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dark via-transparent to-transparent"></div>
+<div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-black/40 backdrop-blur-md flex items-center gap-1.5">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<span class="text-[10px] font-bold text-white uppercase tracking-wider">Available</span>
+</div>
+</div>
+<div class="p-4">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h2 class="text-xl font-display font-bold text-slate-100">The Echo</h2>
+<p class="text-xs text-slate-400 font-body">Los Angeles, CA • 0.8 miles away</p>
+</div>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="text-sm font-bold">4.9</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3 mb-4">
+<div class="bg-surface-elevated/40 p-2 rounded-lg border border-slate-800">
+<p class="text-[10px] uppercase tracking-widest text-slate-500 mb-0.5">Capacity</p>
+<p class="font-mono text-sm text-primary">500</p>
+</div>
+<div class="bg-surface-elevated/40 p-2 rounded-lg border border-slate-800">
+<p class="text-[10px] uppercase tracking-widest text-slate-500 mb-0.5">PA System</p>
+<p class="font-mono text-sm text-slate-200">d&amp;b Audiotechnik</p>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 text-slate-400">
+<span class="material-symbols-outlined text-lg">calendar_today</span>
+<span class="text-xs font-medium">Next open: Oct 24</span>
+</div>
+<button class="px-5 py-2 rounded-lg bg-primary text-background-dark text-sm font-bold hover:opacity-90 transition-opacity">
+                        View Details
+                    </button>
+</div>
+</div>
+</div>
+<!-- Venue Card 2 -->
+<div class="rounded-xl overflow-hidden bg-surface-dark border border-slate-800 shadow-xl">
+<div class="relative h-48 w-full bg-center bg-cover" data-alt="Underground warehouse club with industrial lighting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBj3o1WD3p-KRAt9ywIJzNBZuDQdKB0gpeacUF7h_EeKW7KsbEBBrl93zhLj755OqPaVP2LhrJix-CNXXYx63C3-TCm1uRxbJqih0hHVNxaYSw20chxZzRwZx4rfj3aK5L4nHx_ikk183oPApne9LKhVfNrRkSnezVA4QKw2nZoZcxb-b8ciB-ay3QHK0HtAWFXzlJ4gxbqANUb4L-Ga4BO0mZO-_L8-ZhpmjT9mqh0IwmiBVt1Aq4mwVOAGzhYUzbPlCatja1eIQ')">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dark via-transparent to-transparent"></div>
+<div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-black/40 backdrop-blur-md flex items-center gap-1.5">
+<div class="w-2 h-2 rounded-full bg-accent-coral"></div>
+<span class="text-[10px] font-bold text-white uppercase tracking-wider">Booked</span>
+</div>
+</div>
+<div class="p-4">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h2 class="text-xl font-display font-bold text-slate-100">Soundstage One</h2>
+<p class="text-xs text-slate-400 font-body">Brooklyn, NY • 12 miles away</p>
+</div>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="text-sm font-bold">4.7</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3 mb-4">
+<div class="bg-surface-elevated/40 p-2 rounded-lg border border-slate-800">
+<p class="text-[10px] uppercase tracking-widest text-slate-500 mb-0.5">Capacity</p>
+<p class="font-mono text-sm text-primary">1200</p>
+</div>
+<div class="bg-surface-elevated/40 p-2 rounded-lg border border-slate-800">
+<p class="text-[10px] uppercase tracking-widest text-slate-500 mb-0.5">PA System</p>
+<p class="font-mono text-sm text-slate-200">Meyer Sound</p>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 text-slate-400">
+<span class="material-symbols-outlined text-lg">calendar_today</span>
+<span class="text-xs font-medium">Next open: Nov 12</span>
+</div>
+<button class="px-5 py-2 rounded-lg bg-surface-elevated text-slate-200 text-sm font-bold border border-slate-700">
+                        Check Dates
+                    </button>
+</div>
+</div>
+</div>
+<!-- Venue Card 3 -->
+<div class="rounded-xl overflow-hidden bg-surface-dark border border-slate-800 shadow-xl opacity-90">
+<div class="relative h-48 w-full bg-center bg-cover" data-alt="Small intimate club with stage and booths" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA1RCPJndWOrap7eNYSObAjlpzOey_H1YJJuBwkB9IYLiQhu7uEwplFhFSP9mrwH8vHUFhstmWEQQ6bH49zC49oOQ00QJVwdRNbcycW0_GMdKEVuIj4_LkCGPbGanqHoFbIILbVU2Va60EKZKTw6rnpXHwQZ1oKMURchay3IAgh_B41tcWYwXpJpOCpetGhgSKEwTxak5xICYCq-QTUcL_OT8ap6nxPySB023qkWFHS1aPYh3Au-_NSipb4EVGB6CKMk-yduOYm0w')">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dark via-transparent to-transparent"></div>
+<div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-black/40 backdrop-blur-md flex items-center gap-1.5">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<span class="text-[10px] font-bold text-white uppercase tracking-wider">Available</span>
+</div>
+</div>
+<div class="p-4">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h2 class="text-xl font-display font-bold text-slate-100">Velvet Room</h2>
+<p class="text-xs text-slate-400 font-body">Austin, TX • 150 miles away</p>
+</div>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="text-sm font-bold">4.8</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3 mb-4">
+<div class="bg-surface-elevated/40 p-2 rounded-lg border border-slate-800">
+<p class="text-[10px] uppercase tracking-widest text-slate-500 mb-0.5">Capacity</p>
+<p class="font-mono text-sm text-primary">250</p>
+</div>
+<div class="bg-surface-elevated/40 p-2 rounded-lg border border-slate-800">
+<p class="text-[10px] uppercase tracking-widest text-slate-500 mb-0.5">PA System</p>
+<p class="font-mono text-sm text-slate-200">L-Acoustics</p>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 text-slate-400">
+<span class="material-symbols-outlined text-lg">calendar_today</span>
+<span class="text-xs font-medium">Next open: Tomorrow</span>
+</div>
+<button class="px-5 py-2 rounded-lg bg-primary text-background-dark text-sm font-bold hover:opacity-90 transition-opacity">
+                        View Details
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 bg-background-dark/95 backdrop-blur-lg border-t border-slate-800 pb-8 pt-2">
+<div class="flex justify-around items-center px-4">
+<a class="flex flex-col items-center gap-1 group" href="#">
+<div class="p-1 rounded-full bg-primary/10 text-primary transition-all duration-300">
+<span class="material-symbols-outlined fill-[1] text-2xl">sensors</span>
+</div>
+<span class="text-[10px] font-bold text-primary uppercase tracking-widest">Live</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<div class="p-1 rounded-full text-slate-500 group-hover:text-slate-300 transition-all duration-300">
+<span class="material-symbols-outlined text-2xl">groups</span>
+</div>
+<span class="text-[10px] font-medium text-slate-500 uppercase tracking-widest">Network</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<div class="p-1 rounded-full text-slate-500 group-hover:text-slate-300 transition-all duration-300">
+<span class="material-symbols-outlined text-2xl">confirmation_number</span>
+</div>
+<span class="text-[10px] font-medium text-slate-500 uppercase tracking-widest">Gigs</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<div class="p-1 rounded-full text-slate-500 group-hover:text-slate-300 transition-all duration-300">
+<span class="material-symbols-outlined text-2xl">account_circle</span>
+</div>
+<span class="text-[10px] font-medium text-slate-500 uppercase tracking-widest">Profile</span>
+</a>
+</div>
+</nav>
+</body></html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SoundGrid Sync Catalog</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6161ff",
+                        "background-light": "#f5f5f8",
+                        "background-dark": "#0f0f13",
+                        "surface-dark": "#1a1a24",
+                        "teal-mint": "#00d4aa",
+                        "coral-alert": "#ff6b6b",
+                    },
+                    fontFamily: {
+                        "display": ["Outfit", "Spline Sans", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Outfit', sans-serif;
+        }
+        .mono-data {
+            font-family: 'JetBrains Mono', monospace;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased font-display">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden pb-24">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-20 bg-background-dark/80 backdrop-blur-md border-b border-white/5 px-4 pt-12 pb-4">
+<div class="flex items-center justify-between mb-6">
+<span class="material-symbols-outlined text-slate-400">settings</span>
+<h1 class="text-lg font-bold tracking-tight text-white">SoundGrid Sync</h1>
+<span class="material-symbols-outlined text-slate-400">search</span>
+</div>
+<!-- Segmented Control -->
+<div class="flex h-11 w-full items-center justify-center rounded-full bg-surface-dark p-1">
+<button class="flex h-full flex-1 items-center justify-center rounded-full bg-primary text-white text-sm font-semibold shadow-lg">
+                    Catalog
+                </button>
+<button class="flex h-full flex-1 items-center justify-center rounded-full text-slate-400 text-sm font-medium">
+                    Marketplace
+                </button>
+</div>
+</header>
+<!-- Track List Container -->
+<main class="flex flex-col gap-4 p-4">
+<!-- Track Card 1 -->
+<div class="flex flex-col gap-4 rounded-xl bg-surface-dark p-4 border border-white/5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="flex h-12 w-12 items-center justify-center rounded-full bg-primary/20 text-primary">
+<span class="material-symbols-outlined fill-1">play_arrow</span>
+</div>
+<div>
+<h3 class="text-base font-bold text-white leading-tight">Neon Afterglow</h3>
+<p class="text-xs text-slate-400 mt-0.5">Electronic • Synthwave</p>
+</div>
+</div>
+<span class="rounded-full bg-teal-mint/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-teal-mint border border-teal-mint/20">
+                        Sync Ready
+                    </span>
+</div>
+<!-- Waveform Graphic -->
+<div class="flex items-end gap-[2px] h-10 w-full px-2 opacity-60">
+<div class="h-2 flex-1 bg-primary rounded-full"></div>
+<div class="h-4 flex-1 bg-primary rounded-full"></div>
+<div class="h-6 flex-1 bg-primary rounded-full"></div>
+<div class="h-8 flex-1 bg-primary rounded-full"></div>
+<div class="h-5 flex-1 bg-primary rounded-full"></div>
+<div class="h-7 flex-1 bg-primary rounded-full"></div>
+<div class="h-3 flex-1 bg-primary rounded-full"></div>
+<div class="h-6 flex-1 bg-primary rounded-full"></div>
+<div class="h-9 flex-1 bg-primary rounded-full"></div>
+<div class="h-4 flex-1 bg-primary rounded-full"></div>
+<div class="h-7 flex-1 bg-primary rounded-full"></div>
+<div class="h-5 flex-1 bg-primary rounded-full"></div>
+<div class="h-2 flex-1 bg-primary rounded-full"></div>
+<div class="h-4 flex-1 bg-primary rounded-full"></div>
+<div class="h-6 flex-1 bg-primary rounded-full"></div>
+<div class="h-3 flex-1 bg-primary rounded-full"></div>
+<div class="h-5 flex-1 bg-primary rounded-full"></div>
+<div class="h-8 flex-1 bg-primary rounded-full"></div>
+<div class="h-4 flex-1 bg-primary rounded-full"></div>
+<div class="h-2 flex-1 bg-primary rounded-full"></div>
+</div>
+<div class="flex items-center gap-4 border-t border-white/5 pt-3">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-xs text-slate-500">timer</span>
+<span class="mono-data text-xs text-slate-300 font-medium">124 BPM</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-xs text-slate-500">music_note</span>
+<span class="mono-data text-xs text-slate-300 font-medium">Am</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-xs text-slate-500">schedule</span>
+<span class="mono-data text-xs text-slate-300 font-medium">3:42</span>
+</div>
+</div>
+</div>
+<!-- Track Card 2 (Alert State) -->
+<div class="flex flex-col gap-4 rounded-xl bg-surface-dark p-4 border border-white/5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="flex h-12 w-12 items-center justify-center rounded-full bg-slate-800 text-slate-400">
+<span class="material-symbols-outlined fill-1">play_arrow</span>
+</div>
+<div>
+<h3 class="text-base font-bold text-white leading-tight">Midnight Pulse</h3>
+<p class="text-xs text-slate-400 mt-0.5">Techno • Dark</p>
+</div>
+</div>
+<span class="rounded-full bg-coral-alert/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-coral-alert border border-coral-alert/20">
+                        Missing Metadata
+                    </span>
+</div>
+<!-- Waveform Graphic -->
+<div class="flex items-end gap-[2px] h-10 w-full px-2 opacity-30">
+<div class="h-3 flex-1 bg-slate-500 rounded-full"></div>
+<div class="h-5 flex-1 bg-slate-500 rounded-full"></div>
+<div class="h-4 flex-1 bg-slate-500 rounded-full"></div>
+<div class="h-8 flex-1 bg-slate-500 rounded-full"></div>
+<div class="h-6 flex-1 bg-slate-500 rounded-full"></div>
+<div class="h-3 flex-1 bg-slate-500 rounded-full"></div>
+<div class="h-7 flex-1 bg-slate-500 rounded-full"></div>
+<div class="h-9 flex-1 bg-slate-500 rounded-full"></div>
+<div class="h-4 flex-1 bg-slate-500 rounded-full"></div>
+<div class="h-2 flex-1 bg-slate-500 rounded-full"></div>
+<div class="h-6 flex-1 bg-slate-500 rounded-full"></div>
+<div class="h-5 flex-1 bg-slate-500 rounded-full"></div>
+<div class="h-3 flex-1 bg-slate-500 rounded-full"></div>
+<div class="h-7 flex-1 bg-slate-500 rounded-full"></div>
+<div class="h-4 flex-1 bg-slate-500 rounded-full"></div>
+<div class="h-6 flex-1 bg-slate-500 rounded-full"></div>
+<div class="h-8 flex-1 bg-slate-500 rounded-full"></div>
+<div class="h-2 flex-1 bg-slate-500 rounded-full"></div>
+<div class="h-5 flex-1 bg-slate-500 rounded-full"></div>
+<div class="h-3 flex-1 bg-slate-500 rounded-full"></div>
+</div>
+<div class="flex items-center justify-between border-t border-white/5 pt-3">
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-xs text-slate-500">timer</span>
+<span class="mono-data text-xs text-slate-300 font-medium">118 BPM</span>
+</div>
+<div class="flex items-center gap-1.5 text-coral-alert">
+<span class="material-symbols-outlined text-xs">warning</span>
+<span class="mono-data text-xs font-medium">No Key</span>
+</div>
+</div>
+<button class="text-xs font-bold text-primary px-3 py-1 rounded-full bg-primary/10">Fix</button>
+</div>
+</div>
+<!-- Track Card 3 -->
+<div class="flex flex-col gap-4 rounded-xl bg-surface-dark p-4 border border-white/5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="flex h-12 w-12 items-center justify-center rounded-full bg-primary/20 text-primary">
+<span class="material-symbols-outlined fill-1">play_arrow</span>
+</div>
+<div>
+<h3 class="text-base font-bold text-white leading-tight">Digital Horizon</h3>
+<p class="text-xs text-slate-400 mt-0.5">Ambient • Chill</p>
+</div>
+</div>
+<span class="rounded-full bg-teal-mint/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-teal-mint border border-teal-mint/20">
+                        Sync Ready
+                    </span>
+</div>
+<!-- Waveform Graphic -->
+<div class="flex items-end gap-[2px] h-10 w-full px-2 opacity-60">
+<div class="h-2 flex-1 bg-primary rounded-full"></div>
+<div class="h-3 flex-1 bg-primary rounded-full"></div>
+<div class="h-4 flex-1 bg-primary rounded-full"></div>
+<div class="h-3 flex-1 bg-primary rounded-full"></div>
+<div class="h-5 flex-1 bg-primary rounded-full"></div>
+<div class="h-4 flex-1 bg-primary rounded-full"></div>
+<div class="h-6 flex-1 bg-primary rounded-full"></div>
+<div class="h-4 flex-1 bg-primary rounded-full"></div>
+<div class="h-5 flex-1 bg-primary rounded-full"></div>
+<div class="h-3 flex-1 bg-primary rounded-full"></div>
+<div class="h-4 flex-1 bg-primary rounded-full"></div>
+<div class="h-2 flex-1 bg-primary rounded-full"></div>
+<div class="h-3 flex-1 bg-primary rounded-full"></div>
+<div class="h-5 flex-1 bg-primary rounded-full"></div>
+<div class="h-4 flex-1 bg-primary rounded-full"></div>
+<div class="h-3 flex-1 bg-primary rounded-full"></div>
+<div class="h-2 flex-1 bg-primary rounded-full"></div>
+<div class="h-4 flex-1 bg-primary rounded-full"></div>
+<div class="h-3 flex-1 bg-primary rounded-full"></div>
+<div class="h-2 flex-1 bg-primary rounded-full"></div>
+</div>
+<div class="flex items-center gap-4 border-t border-white/5 pt-3">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-xs text-slate-500">timer</span>
+<span class="mono-data text-xs text-slate-300 font-medium">90 BPM</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-xs text-slate-500">music_note</span>
+<span class="mono-data text-xs text-slate-300 font-medium">C#m</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-xs text-slate-500">schedule</span>
+<span class="mono-data text-xs text-slate-300 font-medium">5:12</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button -->
+<button class="fixed bottom-24 right-6 flex h-16 w-16 items-center justify-center rounded-full bg-primary text-white shadow-2xl shadow-primary/40 z-30 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-3xl font-bold">add</span>
+</button>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 z-40 flex items-center justify-around border-t border-white/5 bg-surface-dark/95 backdrop-blur-xl px-6 pb-8 pt-4">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined fill-1">cloud_sync</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Sync</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">library_music</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Tracks</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Insights</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Profile</span>
+</a>
+</nav>
+</div>
+</body></html>

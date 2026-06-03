@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-02-24)
 
 **Core value:** Enable independent music professionals to execute enforceable, escrow-backed agreements in under 10 minutes.
-**Current focus:** Phase 1: Project Foundation & Verified Identity
+**Current focus:** Ready to execute architecture migration
 
 ## Current Position
 
-Phase: 1 of 6 (Project Foundation & Verified Identity)
-Plan: 0 of 4 in current phase
-Status: Ready to plan
-Last activity: 2026-02-25 — Roadmap and State initialization
+Phase: 2 of 6 (The Digital Handshake)
+Plan: 1 of 4 in current phase
+Status: Architecture Migration Complete ✅
+Last activity: 2026-02-26 — Turborepo + FastAPI migration complete
 
-Progress: [░░░░░░░░░░] 0%
+Progress: [█████████░] 37%
 
 ## Performance Metrics
 
@@ -27,7 +27,8 @@ Progress: [░░░░░░░░░░] 0%
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| 1. Identity | 0/4 | - | - |
+| 1. Identity | 4/4 | 200 min | 50 min |
+| 2. Digital Handshake | 1/4 | 75 min | 75 min |
 
 **Recent Trend:**
 - Last 5 plans: N/A
@@ -46,9 +47,41 @@ Recent decisions affecting current work:
 - [Init]: DocuSign REST API selected for e-signature.
 - [Init]: Next.js 15 (React 19) for core stack.
 
-### Pending Todos
+### Architecture Migration Complete ✅
 
-None yet.
+**Phase 0: Architecture Migration (6-9 hrs) - DONE**
+- [x] Migrate to Turborepo with pnpm
+- [x] Set up FastAPI backend (apps/api)
+- [x] Configure PDM + uv for Python
+- [x] Move Next.js to apps/web
+- [x] Set up shared packages
+- [x] Python app has package.json (required for Turborepo)
+- [x] turbo.json uses "tasks" (not deprecated "pipeline")
+
+**Verification:**
+- [x] pnpm install works
+- [x] Prisma client generates
+- [x] FastAPI app loads
+- [x] Project structure correct
+- [x] 4 workspace packages detected
+
+### Next: Wave 1 - E-Signature System
+
+**Phase 1: Wave 1 - E-Signature (8-10 hrs)**
+- [ ] RSA key infrastructure
+- [ ] PDF generation service
+- [ ] Signature API endpoints
+- [ ] SignaturePad component
+- [ ] Signing ceremony flow
+
+**Phase 2-4:** See IMPLEMENTATION_PLAN.md
+
+### Recently Completed
+
+- [x] Plan 01-01: Project scaffolding and core identity schema
+- [x] Plan 01-02: Multi-persona signup workflow with OAuth
+- [x] Plan 01-03: Stripe Identity integration for verification
+- [x] Plan 01-04: RBAC implementation and data isolation testing
 
 ### Blockers/Concerns
 

@@ -1,0 +1,439 @@
+// SoundGrid Core Identity Schema
+// Defines multi-persona auth, RBAC, and organization structure
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// Core User Model - Base authentication entity
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  emailVerified DateTime?
+  
+  // OAuth Provider Info
+  accounts      Account[]
+  sessions      Session[]
+  
+  // Identity Verification (Stripe Identity)
+  identityVerified     Boolean   @default(false)
+  identityVerifiedAt   DateTime?
+  identitySessionId    String?   // Stripe Identity verification session ID
+  
+  // Timestamps
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  
+  // Relations
+  personas      Persona[]
+  organizations OrganizationMember[]
+  
+  // E-Signature
+  signingKey    SigningKey?
+  signatures    Signature[]
+  createdContracts Contract[]   @relation("CreatedContracts")
+  auditEvents   AuditEvent[]   @relation("ActorAuditEvents")
+  contractParties ContractParty[] @relation("ContractPartyUser")
+  
+  @@map("users")
+}
+
+// Persona Model - Role-specific profiles (Artist, Producer, etc.)
+model Persona {
+  id          String     @id @default(cuid())
+  userId      String
+  user        User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  // Persona Type
+  type        PersonaType
+  
+  // Display Info
+  displayName String
+  avatarUrl   String?
+  bio         String?    @db.Text
+  location    String?    // City, State, Country
+  
+  // Genre/Style (for Artist/Producer)
+  genres      String[]   // Array of genre tags
+  
+  // Professional Info (type-specific)
+  // Artist/Producer fields
+  stageName   String?
+  
+  // Venue fields
+  venueName   String?
+  capacity    Int?       // For venues
+  
+  // Supervisor fields
+  companyName String?    // For supervisors/managers
+  
+  // Verification & Status
+  isVerified  Boolean    @default(false)
+  isActive    Boolean    @default(true)
+  
+  // Stripe Connect Account (for payouts)
+  stripeConnectId      String?   @unique
+  stripeConnectStatus  ConnectStatus @default(NOT_STARTED)
+  
+  // Timestamps
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  
+  // Relations
+  catalogItems        CatalogItem[]
+  contractParties     ContractParty[]
+  
+  @@unique([userId, type])
+  @@map("personas")
+}
+
+enum PersonaType {
+  ARTIST
+  PRODUCER
+  SUPERVISOR
+  VENUE
+  MANAGER
+}
+
+enum ConnectStatus {
+  NOT_STARTED
+  PENDING
+  ACTIVE
+  REJECTED
+}
+
+// Organization Model - Teams, labels, management companies
+model Organization {
+  id          String   @id @default(cuid())
+  
+  name        String
+  slug        String   @unique
+  description String?  @db.Text
+  logoUrl     String?
+  website     String?
+  
+  // Type
+  type        OrganizationType
+  
+  // Stripe Connect for organization-level payouts
+  stripeConnectId      String?   @unique
+  stripeConnectStatus  ConnectStatus @default(NOT_STARTED)
+  
+  // Timestamps
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  // Relations
+  members     OrganizationMember[]
+  
+  @@map("organizations")
+}
+
+enum OrganizationType {
+  LABEL
+  MANAGEMENT
+  STUDIO
+  VENUE_GROUP
+  AGENCY
+  OTHER
+}
+
+// Organization Membership - Links users to organizations with roles
+model OrganizationMember {
+  id             String              @id @default(cuid())
+  
+  organizationId String
+  organization   Organization        @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  
+  userId         String
+  user           User                @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  // Role within organization
+  role           OrganizationRole
+  
+  // Permissions
+  canCreateContracts Boolean @default(false)
+  canSignContracts   Boolean @default(false)
+  canManageCatalog   Boolean @default(false)
+  canManagePayouts   Boolean @default(false)
+  
+  joinedAt       DateTime            @default(now())
+  
+  @@unique([organizationId, userId])
+  @@map("organization_members")
+}
+
+enum OrganizationRole {
+  OWNER
+  ADMIN
+  MEMBER
+  VIEWER
+}
+
+// NextAuth.js Models
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@map("accounts")
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+  @@map("verification_tokens")
+}
+
+// Contract Model - Core legal agreement
+model Contract {
+  id            String         @id @default(cuid())
+  
+  // Contract Details
+  type          ContractType
+  title         String
+  description   String?        @db.Text
+  
+  // Status
+  status        ContractStatus @default(DRAFT)
+  
+  // Parties (flexible multi-party support)
+  parties       ContractParty[]
+  
+  // Terms (JSON based on contract type)
+  terms         Json?
+  
+  // Generated documents
+  draftPdfUrl   String?        // Draft PDF before signing
+  finalPdfUrl   String?        // Final signed PDF
+  documentHash  String?        // SHA-256 hash of final document
+  
+  // Signing
+  signatures    Signature[]
+  auditEvents   AuditEvent[]
+  
+  // DocuSign (legacy, will be replaced)
+  docusignEnvelopeId String?
+  
+  // Financial
+  amount        Int?           // Amount in cents
+  currency      String         @default("USD")
+  
+  // Creator
+  createdById   String
+  createdBy     User           @relation("CreatedContracts", fields: [createdById], references: [id])
+  
+  // Timestamps
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  signedAt      DateTime?
+  expiresAt     DateTime?
+  
+  @@map("contracts")
+}
+
+// Contract Party - Individual party to a contract
+model ContractParty {
+  id          String   @id @default(cuid())
+  
+  contractId  String
+  contract    Contract @relation(fields: [contractId], references: [id], onDelete: Cascade)
+  
+  // Party details
+  name        String
+  email       String
+  role        String   // Artist, Producer, Label, Venue, etc.
+  
+  // User link (optional - for registered users)
+  userId      String?
+  user        User?    @relation("ContractPartyUser", fields: [userId], references: [id])
+  
+  // Persona link (optional - for specific persona)
+  personaId   String?
+  persona     Persona? @relation(fields: [personaId], references: [id])
+  
+  // Identity verification
+  identityVerified Boolean @default(false)
+  
+  // Signature
+  signature   Signature?
+  
+  // Order for signing
+  signingOrder Int     @default(0)
+  
+  @@index([contractId])
+  @@index([userId])
+  @@map("contract_parties")
+}
+
+// RSA Keys for cryptographic signing
+model SigningKey {
+  id          String   @id @default(cuid())
+  
+  userId      String   @unique
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  // RSA Key pair (PEM format)
+  publicKey   String   @db.Text  // RSA public key
+  privateKey  String   @db.Text  // Encrypted private key
+  
+  // Key metadata
+  keyAlgorithm String  @default("RSA-4096")
+  createdAt   DateTime @default(now())
+  expiresAt   DateTime?
+  revokedAt   DateTime?
+  
+  @@index([userId])
+  @@map("signing_keys")
+}
+
+// Signature records
+model Signature {
+  id              String   @id @default(cuid())
+  
+  // Contract reference
+  contractId      String
+  contract        Contract @relation(fields: [contractId], references: [id], onDelete: Cascade)
+  
+  // Party reference
+  partyId         String   @unique
+  party           ContractParty @relation(fields: [partyId], references: [id], onDelete: Cascade)
+  
+  // Signer
+  signerId        String
+  signer          User     @relation(fields: [signerId], references: [id])
+  
+  // Signature data
+  signatureImage  String   // S3 URL to signature image (PNG)
+  signatureHash   String   // SHA-256 hash of document
+  signedData      String   @db.Text  // Base64 RSA signature
+  publicKey       String   @db.Text  // Public key used (at time of signing)
+  
+  // Audit data
+  signedAt        DateTime @default(now())
+  ipAddress       String
+  userAgent       String
+  
+  // Verification
+  verifiedAt      DateTime?
+  isValid         Boolean  @default(true)
+  
+  @@unique([contractId, partyId])
+  @@index([contractId])
+  @@index([signerId])
+  @@index([signedAt])
+  @@map("signatures")
+}
+
+// Audit trail for contracts
+model AuditEvent {
+  id          String   @id @default(cuid())
+  
+  contractId  String
+  contract    Contract @relation(fields: [contractId], references: [id], onDelete: Cascade)
+  
+  eventType   String   // contract_created, party_added, signature_requested, signed, etc.
+  actorId     String?  // User who performed action
+  actor       User?    @relation("ActorAuditEvents", fields: [actorId], references: [id])
+  
+  details     Json     // Event-specific data
+  
+  ipAddress   String?
+  userAgent   String?
+  
+  createdAt   DateTime @default(now())
+  
+  @@index([contractId])
+  @@index([eventType])
+  @@index([createdAt])
+  @@map("audit_events")
+}
+
+enum ContractType {
+  PRODUCER_AGREEMENT
+  SPLIT_SHEET
+  PERFORMANCE
+  SYNC_LICENSE
+  MANAGEMENT
+  WORK_FOR_HIRE
+  COLLABORATION
+  CUSTOM
+}
+
+enum ContractStatus {
+  DRAFT
+  PENDING_SIGNATURE
+  PARTIALLY_SIGNED
+  SIGNED
+  IN_ESCROW
+  COMPLETED
+  CANCELLED
+  DISPUTED
+}
+
+// Catalog Item - Music asset metadata
+model CatalogItem {
+  id          String   @id @default(cuid())
+  
+  personaId   String
+  persona     Persona  @relation(fields: [personaId], references: [id], onDelete: Cascade)
+  
+  // Track Info
+  title       String
+  version     String?  // Remix, Radio Edit, etc.
+  
+  // ISRC/ISWC (locked until contract executed)
+  isrc        String?  @unique
+  iswc        String?  @unique
+  isrcReleased  Boolean @default(false)
+  iswcReleased  Boolean @default(false)
+  
+  // Audio
+  audioUrl    String?
+  duration    Int?     // Duration in seconds
+  
+  // Metadata
+  genres      String[]
+  moods       String[]
+  tempo       Int?     // BPM
+  key         String?
+  
+  // AI Scoring
+  syncReadinessScore Int?     // 0-100 score from AI agent
+  metadataComplete   Boolean @default(false)
+  
+  // Timestamps
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  @@map("catalog_items")
+}
